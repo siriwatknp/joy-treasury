@@ -1,0 +1,30 @@
+name: Deploy Storybook
+
+on:
+  push:
+    branches: [main]
+
+permissions:
+  contents: write
+
+jobs:
+  build-deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+
+      - uses: actions/setup-node@v3
+        with:
+          node-version: '16'
+          cache: 'yarn'
+
+      - name: Install dependencies
+        run: yarn
+
+      - name: Build storybook
+        run: yarn build-storybook
+
+      - name: Deploy Storybook 🚀
+        uses: JamesIves/github-pages-deploy-action@v4
+        with:
+          folder: storybook-static # The folder the action should deploy.
