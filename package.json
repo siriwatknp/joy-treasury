@@ -1,0 +1,80 @@
+{
+  "version": "0.1.0",
+  "license": "MIT",
+  "main": "dist/index.js",
+  "typings": "dist/index.d.ts",
+  "files": [
+    "dist",
+    "src"
+  ],
+  "engines": {
+    "node": ">=10"
+  },
+  "scripts": {
+    "start": "tsdx watch",
+    "build": "tsdx build",
+    "test": "tsdx test --passWithNoTests",
+    "lint": "tsdx lint",
+    "prepare": "tsdx build",
+    "size": "size-limit",
+    "analyze": "size-limit --why",
+    "storybook": "storybook dev -p 6006",
+    "build-storybook": "storybook build"
+  },
+  "peerDependencies": {
+    "react": ">=16"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "tsdx lint"
+    }
+  },
+  "prettier": {
+    "printWidth": 80,
+    "semi": true,
+    "singleQuote": true,
+    "trailingComma": "es5"
+  },
+  "name": "joy-treasury",
+  "author": "siriwatknp",
+  "module": "dist/joy-treasury.esm.js",
+  "size-limit": [
+    {
+      "path": "dist/joy-treasury.cjs.production.min.js",
+      "limit": "10 KB"
+    },
+    {
+      "path": "dist/joy-treasury.esm.js",
+      "limit": "10 KB"
+    }
+  ],
+  "devDependencies": {
+    "@babel/core": "7.22.9",
+    "@babel/preset-env": "7.22.9",
+    "@babel/preset-react": "7.22.5",
+    "@babel/preset-typescript": "7.22.5",
+    "@emotion/react": "11.11.1",
+    "@emotion/styled": "11.11.0",
+    "@mui/joy": "5.0.0-alpha.87",
+    "@size-limit/preset-small-lib": "8.2.6",
+    "@storybook/addon-essentials": "7.0.27",
+    "@storybook/addon-info": "5.3.21",
+    "@storybook/addon-links": "7.0.27",
+    "@storybook/addons": "7.0.27",
+    "@storybook/react": "7.0.27",
+    "@storybook/react-webpack5": "7.0.27",
+    "@types/react": "18.2.15",
+    "@types/react-dom": "18.2.7",
+    "babel-loader": "9.1.3",
+    "husky": "8.0.3",
+    "react": "18.2.0",
+    "react-dom": "18.2.0",
+    "react-is": "18.2.0",
+    "size-limit": "8.2.6",
+    "storybook": "7.0.27",
+    "storybook-dark-mode": "3.0.0",
+    "tsdx": "0.14.1",
+    "tslib": "2.6.0",
+    "typescript": "5.1.6"
+  }
+}
