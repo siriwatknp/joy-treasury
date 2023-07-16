@@ -1,20 +1,32 @@
 {
+  "name": "joy-treasury",
+  "author": "siriwatknp",
   "version": "0.1.0",
+  "homepage": "https://siriwatknp.github.io/joy-treasury/",
   "license": "MIT",
+  "publishConfig": {
+    "access": "public"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/siriwatknp/joy-treasury"
+  },
   "main": "dist/index.js",
-  "typings": "dist/index.d.ts",
+  "type": "module",
+  "exports": "./dist/index.js",
+  "bin": "./dist/index.js",
   "files": [
     "dist",
     "src"
   ],
   "engines": {
-    "node": ">=10"
+    "node": ">=12"
   },
   "scripts": {
-    "start": "tsdx watch",
-    "build": "tsdx build",
+    "dev": "tsup --watch",
+    "build": "tsup",
     "test": "tsdx test --passWithNoTests",
-    "lint": "tsdx lint",
+    "typecheck": "tsc --noEmit",
     "prepare": "tsdx build",
     "size": "size-limit",
     "analyze": "size-limit --why",
@@ -35,8 +47,6 @@
     "singleQuote": true,
     "trailingComma": "es5"
   },
-  "name": "joy-treasury",
-  "author": "siriwatknp",
   "module": "dist/joy-treasury.esm.js",
   "size-limit": [
     {
@@ -48,6 +58,18 @@
       "limit": "10 KB"
     }
   ],
+  "dependencies": {
+    "@types/got": "9.6.11",
+    "@types/rimraf": "3.0.0",
+    "@types/tar": "4.0.4",
+    "chalk": "4.1.0",
+    "commander": "7.1.0",
+    "cpy": "8.1.1",
+    "got": "11.8.2",
+    "rimraf": "3.0.2",
+    "tar": "6.1.0",
+    "update-check": "1.5.4"
+  },
   "devDependencies": {
     "@babel/core": "7.22.9",
     "@babel/preset-env": "7.22.9",
@@ -75,6 +97,7 @@
     "storybook-dark-mode": "3.0.0",
     "tsdx": "0.14.1",
     "tslib": "2.6.0",
+    "tsup": "7.1.0",
     "typescript": "5.1.6"
   }
 }
