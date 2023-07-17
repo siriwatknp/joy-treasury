@@ -77,19 +77,22 @@ const logger = {
 };
 
 async function getConfigFile(overrides?: Partial<CloneOptions>) {
+  let config: CloneOptions = DEFAULT_CONFIG;
   try {
     const explorer = cosmiconfig("joy-treasury");
-    const config: CloneOptions = (await explorer.search())?.config;
+    const result = await explorer.search();
+    if (result?.config) {
+      config = result.config;
+    }
     logger.version();
     logger.info("using config from joy-treasury.config.js");
-    return { ...config, ...overrides };
   } catch (error) {
     logger.info("config file not found, use default config");
     logger.info(
       chalk.blue('{ dir: "src/joy-treasury", storybook: false, test: false }')
     );
   }
-  return { ...DEFAULT_CONFIG, ...overrides };
+  return { ...config, ...overrides };
 }
 
 function downloadAndExtractCode(
@@ -203,6 +206,7 @@ program.parse(process.argv);
 
 async function runCloneCommand() {
   const config = await getConfigFile(cloneParams.options);
+  console.log("config", config);
   if (config.dir && !config.dir.startsWith("/")) {
     config.dir = `/${config.dir}`;
   }
@@ -227,50 +231,55 @@ async function runCloneCommand() {
   const nonTemplateSources = cloneParams.sources.filter(
     (s) => !s.startsWith("template")
   );
-  if (nonTemplateSources.length) {
-    await downloadAndExtractCode(tempRoot, nonTemplateSources, config.branch);
-  }
-  if (templateSources.length) {
-    await downloadTemplates(
-      tempTemplateRoot,
-      templateSources,
-      config.branch,
-      config.template === "typescript" ? "src" : "javascript"
-    );
-  }
-  const excludedFiles = [
-    ...(!config.storybook ? [`!${tempRoot}/**/*.stories.*`] : []),
-    ...(!config.test ? [`!${tempRoot}/**/*.test.*`] : []),
-  ];
-  logger.info("finishing things up...");
-  await Promise.all(
-    nonTemplateSources.map((mod) =>
-      cpy(
-        [
-          // default template is typescript (ts codes live in "src" folder)
-          `${tempRoot}/${mod}/${TEMPLATE_FOLDER_MAP[config.template]}/*`,
-          ...excludedFiles,
-        ],
-        `${actualRoot}/${mod}`,
-        {
-          overwrite: true,
-        }
-      )
-    )
-  );
-  await Promise.all(
-    templateSources.map((mod) => {
-      const [, component, style] = mod.split("-");
-      return cpy(
-        `${tempTemplateRoot}/${component}/${style}/*`,
-        `${actualRoot}/${mod}`,
-        { overwrite: true }
+  try {
+    if (nonTemplateSources.length) {
+      await downloadAndExtractCode(tempRoot, nonTemplateSources, config.branch);
+    }
+    if (templateSources.length) {
+      await downloadTemplates(
+        tempTemplateRoot,
+        templateSources,
+        config.branch,
+        config.template === "typescript" ? "src" : "javascript"
       );
-    })
-  );
-
-  // clean up temp folder
-  await Promise.all([removeDir(tempRoot), removeDir(tempTemplateRoot)]);
+    }
+    const excludedFiles = [
+      ...(!config.storybook ? [`!${tempRoot}/**/*.stories.*`] : []),
+      ...(!config.test ? [`!${tempRoot}/**/*.test.*`] : []),
+    ];
+    logger.info("finishing things up...");
+    await Promise.all(
+      nonTemplateSources.map((mod) =>
+        cpy(
+          [
+            // default template is typescript (ts codes live in "src" folder)
+            `${tempRoot}/${mod}/${TEMPLATE_FOLDER_MAP[config.template]}/*`,
+            ...excludedFiles,
+          ],
+          `${actualRoot}/${mod}`,
+          {
+            overwrite: true,
+          }
+        )
+      )
+    );
+    await Promise.all(
+      templateSources.map((mod) => {
+        const [, component, style] = mod.split("-");
+        return cpy(
+          `${tempTemplateRoot}/${component}/${style}/*`,
+          `${actualRoot}/${mod}`,
+          { overwrite: true }
+        );
+      })
+    );
+  } catch (error) {
+    logger.log(chalk.bold(chalk.red("❌ clone failed!")));
+    throw error;
+  } finally {
+    // clean up temp folder
+    await Promise.all([removeDir(tempRoot), removeDir(tempTemplateRoot)]);
+  }
   logger.log(chalk.bold(chalk.green("✅ cloned successfully!")));
 }
 
