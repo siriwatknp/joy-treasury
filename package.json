@@ -1,5 +1,6 @@
 {
   "name": "joy-treasury",
+  "description": "A CLI to clone Joy UI blocks into your project.",
   "author": "siriwatknp",
   "version": "0.1.0",
   "homepage": "https://siriwatknp.github.io/joy-treasury/",
@@ -16,54 +17,22 @@
   "exports": "./dist/index.js",
   "bin": "./dist/index.js",
   "files": [
-    "dist",
-    "src"
+    "dist"
   ],
-  "engines": {
-    "node": ">=12"
-  },
   "scripts": {
     "dev": "tsup --watch",
     "build": "tsup",
-    "test": "tsdx test --passWithNoTests",
     "typecheck": "tsc --noEmit",
-    "prepare": "tsdx build",
-    "size": "size-limit",
-    "analyze": "size-limit --why",
     "storybook": "storybook dev -p 6006",
     "build-storybook": "storybook build"
   },
-  "peerDependencies": {
-    "react": ">=16"
-  },
-  "husky": {
-    "hooks": {
-      "pre-commit": "tsdx lint"
-    }
-  },
-  "prettier": {
-    "printWidth": 80,
-    "semi": true,
-    "singleQuote": true,
-    "trailingComma": "es5"
-  },
-  "module": "dist/joy-treasury.esm.js",
-  "size-limit": [
-    {
-      "path": "dist/joy-treasury.cjs.production.min.js",
-      "limit": "10 KB"
-    },
-    {
-      "path": "dist/joy-treasury.esm.js",
-      "limit": "10 KB"
-    }
-  ],
   "dependencies": {
     "@types/got": "9.6.11",
     "@types/rimraf": "3.0.0",
     "@types/tar": "4.0.4",
     "chalk": "4.1.0",
     "commander": "7.1.0",
+    "cosmiconfig": "8.2.0",
     "cpy": "8.1.1",
     "got": "11.8.2",
     "rimraf": "3.0.2",
@@ -78,24 +47,18 @@
     "@emotion/react": "11.11.1",
     "@emotion/styled": "11.11.0",
     "@mui/joy": "5.0.0-alpha.87",
-    "@size-limit/preset-small-lib": "8.2.6",
     "@storybook/addon-essentials": "7.0.27",
     "@storybook/addon-info": "5.3.21",
     "@storybook/addon-links": "7.0.27",
+    "@storybook/addon-styling": "1.3.4",
     "@storybook/addons": "7.0.27",
     "@storybook/react": "7.0.27",
     "@storybook/react-webpack5": "7.0.27",
     "@types/react": "18.2.15",
     "@types/react-dom": "18.2.7",
     "babel-loader": "9.1.3",
-    "husky": "8.0.3",
-    "react": "18.2.0",
-    "react-dom": "18.2.0",
-    "react-is": "18.2.0",
-    "size-limit": "8.2.6",
     "storybook": "7.0.27",
     "storybook-dark-mode": "3.0.0",
-    "tsdx": "0.14.1",
     "tslib": "2.6.0",
     "tsup": "7.1.0",
     "typescript": "5.1.6"

@@ -6,3 +6,7 @@ dist
 
 # storybook build directory
 storybook-static
+
+# local test
+joy-treasury.config.js
+joy-treasury

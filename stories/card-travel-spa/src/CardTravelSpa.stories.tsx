@@ -1,18 +1,17 @@
 import React from 'react';
 import type { Meta, StoryObj } from "@storybook/react";
 
-import CardNewsSpa from "./CardNewsSpa";
-import CardNewsSpaCover from "./CardNewsSpaCover";
+import CardTravelSpa from "./CardTravelSpa";
+import CardTravelSpaCover from "./CardTravelSpaCover";
 
 // More on how to set up stories at: https://storybook.js.org/docs/react/writing-stories/introduction
 const meta = {
-  title: "Card/News/Spa",
-  component: CardNewsSpa,
+  title: "Card/Travel/Spa",
+  component: CardTravelSpa,
   parameters: {
     layout: "centered",
   },
-  // tags: ["autodocs"],
-} satisfies Meta<typeof CardNewsSpa>;
+} satisfies Meta<typeof CardTravelSpa>;
 
 export default meta;
 type Story = StoryObj<typeof meta>;
@@ -21,7 +20,7 @@ type Story = StoryObj<typeof meta>;
 export const Spa: Story = {
   render: () => (
     <div style={{ width: 400, maxWidth: "100%" }}>
-      <CardNewsSpa />
+      <CardTravelSpa />
     </div>
   ),
 };
@@ -29,7 +28,7 @@ export const Spa: Story = {
 export const SpaCover: Story = {
   render: () => (
     <div style={{ width: 400, maxWidth: "100%", height: 600 }}>
-      <CardNewsSpaCover />
+      <CardTravelSpaCover />
     </div>
   ),
 };

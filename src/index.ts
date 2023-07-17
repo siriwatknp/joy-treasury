@@ -10,6 +10,7 @@ import { Stream } from 'stream';
 import { promisify } from 'util';
 import checkForUpdate from 'update-check';
 import { execSync } from 'child_process';
+import { cosmiconfig } from 'cosmiconfig';
 import { CloneOptions, createProgram } from './program';
 // @ts-ignore
 import packageJson from '../package.json';
@@ -20,7 +21,7 @@ const TEMPLATE_FOLDER_MAP = {
   typescript: 'src',
   javascript: 'javascript',
 };
-const MUI_TREASURY_CONFIG_FILE = 'joy-treasury.config.js';
+const JOY_TREASURY_CONFIG_FILE = 'joy-treasury.config.js';
 const DEFAULT_CONFIG = {
   dir: 'src/joy-treasury',
   template: 'typescript',
@@ -28,7 +29,7 @@ const DEFAULT_CONFIG = {
   test: false,
   branch: 'main',
 } as const;
-const CONFIG_FILE_TEMPLATE = `module.exports = {
+const CONFIG_FILE_TEMPLATE = `export default {
   dir: "${DEFAULT_CONFIG.dir}",
   template: "${DEFAULT_CONFIG.template}",
   storybook: ${DEFAULT_CONFIG.storybook},
@@ -75,16 +76,17 @@ const logger = {
   },
 };
 
-function getConfigFile(overrides?: Partial<CloneOptions>) {
+async function getConfigFile(overrides?: Partial<CloneOptions>) {
   try {
-    const config: CloneOptions = require(`${process.cwd()}/${MUI_TREASURY_CONFIG_FILE}`);
+    const explorer = cosmiconfig('joy-treasury');
+    const config: CloneOptions = (await explorer.search())?.config;
     logger.version();
     logger.info('using config from joy-treasury.config.js');
     return { ...config, ...overrides };
   } catch (error) {
     logger.info('config file not found, use default config');
     logger.info(
-      chalk.blue('{ dir: "src/joy-treasury", storybook: true, test: true }')
+      chalk.blue('{ dir: "src/joy-treasury", storybook: false, test: false }')
     );
   }
   return { ...DEFAULT_CONFIG, ...overrides };
@@ -187,11 +189,11 @@ const program = createProgram({
       cloneParams.options = options;
     },
     init: () => {
-      fs.writeFile(MUI_TREASURY_CONFIG_FILE, CONFIG_FILE_TEMPLATE, function(
+      fs.writeFile(JOY_TREASURY_CONFIG_FILE, CONFIG_FILE_TEMPLATE, function(
         err
       ) {
         if (err) throw err;
-        logger.success(`${MUI_TREASURY_CONFIG_FILE} is created! 🎉`);
+        logger.success(`${JOY_TREASURY_CONFIG_FILE} is created! 🎉`);
       });
     },
   },
@@ -200,7 +202,7 @@ const program = createProgram({
 program.parse(process.argv);
 
 async function runCloneCommand() {
-  const config = getConfigFile(cloneParams.options);
+  const config = await getConfigFile(cloneParams.options);
   if (config.dir && !config.dir.startsWith('/')) {
     config.dir = `/${config.dir}`;
   }

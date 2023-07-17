@@ -1,28 +1,27 @@
-import React from 'react';
-import AspectRatio from '@mui/joy/AspectRatio';
-import Card from '@mui/joy/Card';
-import CardActions from '@mui/joy/CardActions';
-import CardOverflow from '@mui/joy/CardOverflow';
-import CardContent from '@mui/joy/CardContent';
-import Link from '@mui/joy/Link';
-import Typography from '@mui/joy/Typography';
-import SvgIcon from '@mui/joy/SvgIcon';
+import React from "react";
+import AspectRatio from "@mui/joy/AspectRatio";
+import Card from "@mui/joy/Card";
+import CardOverflow from "@mui/joy/CardOverflow";
+import CardContent from "@mui/joy/CardContent";
+import Link from "@mui/joy/Link";
+import Typography from "@mui/joy/Typography";
+import SvgIcon from "@mui/joy/SvgIcon";
 
 export default function CardNewsMaldives() {
   return (
-    <Card sx={{ borderRadius: 0, '--Card-radius': 0 }}>
+    <Card sx={{ borderRadius: 0, "--Card-radius": 0 }}>
       <CardOverflow>
         <AspectRatio>
           <img src="https://images.unsplash.com/photo-1624995256645-3e497ca1b29c" />
           <Typography
             sx={{
-              position: 'absolute',
+              position: "absolute",
               zIndex: 1,
-              fontWeight: 'xl',
-              left: '1rem',
-              top: '1rem',
-              color: 'white',
-              textShadow: '0 0.05em 0.2em rgba(0,0,0,0.5)',
+              fontWeight: "xl",
+              left: "1rem",
+              top: "1rem",
+              color: "white",
+              textShadow: "0 0.05em 0.2em rgba(0,0,0,0.5)",
             }}
           >
             NEWS
@@ -62,7 +61,7 @@ export default function CardNewsMaldives() {
             </svg>
           </SvgIcon>
         }
-        sx={{ fontWeight: 'lg', fontSize: 'sm' }}
+        sx={{ fontWeight: "lg", fontSize: "sm" }}
       >
         Find out more
       </Link>
