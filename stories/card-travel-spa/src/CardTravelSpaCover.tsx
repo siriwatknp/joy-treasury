@@ -7,7 +7,7 @@ import Link from "@mui/joy/Link";
 import Typography from "@mui/joy/Typography";
 import SvgIcon from "@mui/joy/SvgIcon";
 
-export default function CardNewsSpaCover() {
+export default function CardTravelSpaCover() {
   return (
     <Card
       variant="solid"

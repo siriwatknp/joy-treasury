@@ -1,28 +1,28 @@
-import React from 'react';
-import AspectRatio from '@mui/joy/AspectRatio';
-import Box from '@mui/joy/Box';
-import Card from '@mui/joy/Card';
-import CardActions from '@mui/joy/CardActions';
-import CardOverflow from '@mui/joy/CardOverflow';
-import CardContent from '@mui/joy/CardContent';
-import CircularProgress from '@mui/joy/CircularProgress';
-import Link from '@mui/joy/Link';
-import Typography from '@mui/joy/Typography';
-import SvgIcon from '@mui/joy/SvgIcon';
+import React from "react";
+import AspectRatio from "@mui/joy/AspectRatio";
+import Box from "@mui/joy/Box";
+import Card from "@mui/joy/Card";
+import CardActions from "@mui/joy/CardActions";
+import CardOverflow from "@mui/joy/CardOverflow";
+import CardContent from "@mui/joy/CardContent";
+import CircularProgress from "@mui/joy/CircularProgress";
+import Link from "@mui/joy/Link";
+import Typography from "@mui/joy/Typography";
+import SvgIcon from "@mui/joy/SvgIcon";
 
-export default function CardNewsSpa() {
+export default function CardTravelSpa() {
   return (
     <Card
       size="lg"
-      sx={{ borderRadius: 0, '--Card-radius': 0, boxShadow: 'xl' }}
+      sx={{ borderRadius: 0, "--Card-radius": 0, boxShadow: "xl" }}
     >
       <CardOverflow>
         <AspectRatio ratio="7/5">
           <img src="https://images.unsplash.com/photo-1470214203634-e436a8848e23" />
         </AspectRatio>
       </CardOverflow>
-      <CardContent orientation="horizontal" sx={{ alignItems: 'center' }}>
-        <CardContent sx={{ gap: 1, flex: 'max-content' }}>
+      <CardContent orientation="horizontal" sx={{ alignItems: "center" }}>
+        <CardContent sx={{ gap: 1, flex: "max-content" }}>
           <Typography level="h2" fontSize="xl2">
             Blissful Haven Spa
           </Typography>
@@ -48,13 +48,13 @@ export default function CardNewsSpa() {
             Mystical valleys of Eldoria
           </Typography>
         </CardContent>
-        <Box sx={{ flex: 'auto', textAlign: 'center' }}>
+        <Box sx={{ flex: "auto", textAlign: "center" }}>
           <CircularProgress
             color="success"
             thickness={2}
             determinate
             value={91}
-            sx={{ '--CircularProgress-size': '52px', fontSize: 'sm' }}
+            sx={{ "--CircularProgress-size": "52px", fontSize: "sm" }}
           >
             9.1
           </CircularProgress>
@@ -67,12 +67,12 @@ export default function CardNewsSpa() {
       </Typography>
       <CardOverflow
         sx={{
-          bgcolor: 'background.level1',
-          borderTop: '1px solid',
-          borderColor: 'divider',
+          bgcolor: "background.level1",
+          borderTop: "1px solid",
+          borderColor: "divider",
         }}
       >
-        <CardActions sx={{ justifyContent: 'space-between' }}>
+        <CardActions sx={{ justifyContent: "space-between" }}>
           <Typography level="body3">
             From <Typography color="success">$ 2,500</Typography> for 8 nights
           </Typography>
@@ -94,7 +94,7 @@ export default function CardNewsSpa() {
                 </svg>
               </SvgIcon>
             }
-            sx={{ fontWeight: 'lg' }}
+            sx={{ fontWeight: "lg" }}
           >
             Book now
           </Link>
