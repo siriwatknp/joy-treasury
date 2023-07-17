@@ -1,33 +1,33 @@
 #!/usr/bin/env node
 
-import got from 'got';
-import fs from 'fs';
-import cpy from 'cpy';
-import chalk from 'chalk';
-import rimraf from 'rimraf';
-import * as tar from 'tar';
-import { Stream } from 'stream';
-import { promisify } from 'util';
-import checkForUpdate from 'update-check';
-import { execSync } from 'child_process';
-import { cosmiconfig } from 'cosmiconfig';
-import { CloneOptions, createProgram } from './program';
+import got from "got";
+import fs from "fs";
+import cpy from "cpy";
+import chalk from "chalk";
+import rimraf from "rimraf";
+import * as tar from "tar";
+import { Stream } from "stream";
+import { promisify } from "util";
+import checkForUpdate from "update-check";
+import { execSync } from "child_process";
+import { cosmiconfig } from "cosmiconfig";
+import { CloneOptions, createProgram } from "./program";
 // @ts-ignore
-import packageJson from '../package.json';
+import packageJson from "../package.json";
 
 const pipeline = promisify(Stream.pipeline);
 
 const TEMPLATE_FOLDER_MAP = {
-  typescript: 'src',
-  javascript: 'javascript',
+  typescript: "src",
+  javascript: "javascript",
 };
-const JOY_TREASURY_CONFIG_FILE = 'joy-treasury.config.js';
+const JOY_TREASURY_CONFIG_FILE = "joy-treasury.config.js";
 const DEFAULT_CONFIG = {
-  dir: 'src/joy-treasury',
-  template: 'typescript',
+  dir: "src/joy-treasury",
+  template: "typescript",
   storybook: false,
   test: false,
-  branch: 'main',
+  branch: "main",
 } as const;
 const CONFIG_FILE_TEMPLATE = `export default {
   dir: "${DEFAULT_CONFIG.dir}",
@@ -48,29 +48,29 @@ const cloneParams: {
 
 const logger = {
   log: (...text: string[]) => {
-    console.log(chalk.bgHex('D4D4D8').hex('3F3F46')('joy-treasury'), ...text);
+    console.log(chalk.bgHex("D4D4D8").hex("3F3F46")("joy-treasury"), ...text);
   },
   info: function(text: string | ((t: typeof chalk) => string)) {
     this.log(
-      chalk.bold(chalk.green('info')),
-      typeof text === 'function' ? text(chalk) : text
+      chalk.bold(chalk.green("info")),
+      typeof text === "function" ? text(chalk) : text
     );
   },
   config: function(text: string | ((t: typeof chalk) => string)) {
     this.log(
-      chalk.bold(chalk.hex('0284C7')('config')),
-      typeof text === 'function' ? text(chalk) : text
+      chalk.bold(chalk.hex("0284C7")("config")),
+      typeof text === "function" ? text(chalk) : text
     );
   },
   success: function(text: string | ((t: typeof chalk) => string)) {
     this.log(
-      chalk.bold(chalk.green('success')),
-      typeof text === 'function' ? text(chalk) : text
+      chalk.bold(chalk.green("success")),
+      typeof text === "function" ? text(chalk) : text
     );
   },
   version: function() {
     this.log(
-      chalk.bold(chalk.hex('F59E0B')('version')),
+      chalk.bold(chalk.hex("F59E0B")("version")),
       chalk.bold(chalk.yellow(`v${packageJson.version}`))
     );
   },
@@ -78,13 +78,13 @@ const logger = {
 
 async function getConfigFile(overrides?: Partial<CloneOptions>) {
   try {
-    const explorer = cosmiconfig('joy-treasury');
+    const explorer = cosmiconfig("joy-treasury");
     const config: CloneOptions = (await explorer.search())?.config;
     logger.version();
-    logger.info('using config from joy-treasury.config.js');
+    logger.info("using config from joy-treasury.config.js");
     return { ...config, ...overrides };
   } catch (error) {
-    logger.info('config file not found, use default config');
+    logger.info("config file not found, use default config");
     logger.info(
       chalk.blue('{ dir: "src/joy-treasury", storybook: false, test: false }')
     );
@@ -103,7 +103,7 @@ function downloadAndExtractCode(
     ),
     tar.extract(
       { cwd: root, strip: 2 },
-      sources.map(src => `joy-treasury-${branch}/stories/${src}`)
+      sources.map((src) => `joy-treasury-${branch}/stories/${src}`)
     )
   );
 }
@@ -111,7 +111,7 @@ function downloadTemplates(
   root: string,
   sources: string[],
   branch: string,
-  folder: 'src' | 'javascript'
+  folder: "src" | "javascript"
 ): Promise<void> {
   return pipeline(
     got.stream(
@@ -124,8 +124,8 @@ function downloadTemplates(
           src // src is 'template-component-style' => 'component/style'
         ) =>
           `joy-treasury-${branch}/packages/templates/${folder}/${src
-            .replace('template-', '')
-            .replace('-', '/')}`
+            .replace("template-", "")
+            .replace("-", "/")}`
       )
     )
   );
@@ -149,9 +149,9 @@ function shouldUseYarn(): boolean {
   try {
     const userAgent = process.env.npm_config_user_agent;
     if (userAgent) {
-      return Boolean(userAgent && userAgent.startsWith('yarn'));
+      return Boolean(userAgent && userAgent.startsWith("yarn"));
     }
-    execSync('yarnpkg --version', { stdio: 'ignore' });
+    execSync("yarnpkg --version", { stdio: "ignore" });
     return true;
   } catch (e) {
     return false;
@@ -166,12 +166,12 @@ async function notifyUpdate(): Promise<void> {
 
       console.log();
       console.log(
-        chalk.yellow.bold('A new version of `joy-treasury` is available!')
+        chalk.yellow.bold("A new version of `joy-treasury` is available!")
       );
       console.log(
-        'You can update by running: ' +
+        "You can update by running: " +
           chalk.cyan(
-            isYarn ? 'yarn global add joy-treasury' : 'npm i -g joy-treasury'
+            isYarn ? "yarn global add joy-treasury" : "npm i -g joy-treasury"
           )
       );
       console.log();
@@ -203,14 +203,14 @@ program.parse(process.argv);
 
 async function runCloneCommand() {
   const config = await getConfigFile(cloneParams.options);
-  if (config.dir && !config.dir.startsWith('/')) {
+  if (config.dir && !config.dir.startsWith("/")) {
     config.dir = `/${config.dir}`;
   }
   for (let field of Object.entries(config)) {
     logger.config(`"${field[0]}: ${field[1]}"`);
   }
-  const tempRoot = process.cwd() + '/joy-treasury-tmp';
-  const tempTemplateRoot = process.cwd() + '/joy-treasury-template-tmp';
+  const tempRoot = process.cwd() + "/joy-treasury-tmp";
+  const tempTemplateRoot = process.cwd() + "/joy-treasury-template-tmp";
   const actualRoot = process.cwd() + config.dir;
   if (!fs.existsSync(tempRoot)) {
     fs.mkdirSync(tempRoot, { recursive: true });
@@ -221,11 +221,11 @@ async function runCloneCommand() {
   logger.info(
     `start cloning ${chalk.bold(cloneParams.sources.length)} packages...`
   );
-  const templateSources = cloneParams.sources.filter(s =>
-    s.startsWith('template')
+  const templateSources = cloneParams.sources.filter((s) =>
+    s.startsWith("template")
   );
   const nonTemplateSources = cloneParams.sources.filter(
-    s => !s.startsWith('template')
+    (s) => !s.startsWith("template")
   );
   if (nonTemplateSources.length) {
     await downloadAndExtractCode(tempRoot, nonTemplateSources, config.branch);
@@ -235,16 +235,16 @@ async function runCloneCommand() {
       tempTemplateRoot,
       templateSources,
       config.branch,
-      config.template === 'typescript' ? 'src' : 'javascript'
+      config.template === "typescript" ? "src" : "javascript"
     );
   }
   const excludedFiles = [
     ...(!config.storybook ? [`!${tempRoot}/**/*.stories.*`] : []),
     ...(!config.test ? [`!${tempRoot}/**/*.test.*`] : []),
   ];
-  logger.info('finishing things up...');
+  logger.info("finishing things up...");
   await Promise.all(
-    nonTemplateSources.map(mod =>
+    nonTemplateSources.map((mod) =>
       cpy(
         [
           // default template is typescript (ts codes live in "src" folder)
@@ -259,8 +259,8 @@ async function runCloneCommand() {
     )
   );
   await Promise.all(
-    templateSources.map(mod => {
-      const [, component, style] = mod.split('-');
+    templateSources.map((mod) => {
+      const [, component, style] = mod.split("-");
       return cpy(
         `${tempTemplateRoot}/${component}/${style}/*`,
         `${actualRoot}/${mod}`,
@@ -271,13 +271,13 @@ async function runCloneCommand() {
 
   // clean up temp folder
   await Promise.all([removeDir(tempRoot), removeDir(tempTemplateRoot)]);
-  logger.log(chalk.bold(chalk.green('✅ cloned successfully!')));
+  logger.log(chalk.bold(chalk.green("✅ cloned successfully!")));
 }
 
 if (cloneParams.sources.length) {
   runCloneCommand()
     .then(notifyUpdate)
-    .catch(error => {
+    .catch((error) => {
       throw error;
     });
 }
