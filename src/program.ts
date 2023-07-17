@@ -1,12 +1,11 @@
-import commander from 'commander';
+import commander from "commander";
 // @ts-ignore
-import packageJson from '../package.json';
+import packageJson from "../package.json";
 
 export type CloneOptions = {
   dir: string;
-  template: 'typescript' | 'javascript';
+  template: "typescript" | "javascript";
   storybook: boolean;
-  test: boolean;
   branch: string;
 };
 export type Params = {
@@ -21,7 +20,7 @@ export type Params = {
 };
 
 function parseTemplate(value: string) {
-  if (value !== 'javascript' && value !== 'typescript') {
+  if (value !== "javascript" && value !== "typescript") {
     throw new commander.InvalidOptionArgumentError(
       'only "javascript" or "typescript" is supported via template, pass nothing to use typescript template'
     );
@@ -32,26 +31,26 @@ function parseTemplate(value: string) {
 export const createProgram = ({ commands: { clone, init } }: Params) => {
   const program = new commander.Command(packageJson.name).version(
     packageJson.version,
-    '-v, --version',
-    'output the current version'
+    "-v, --version",
+    "output the current version"
   );
 
-  program.command('init').action(() => {
+  program.command("init").action(() => {
     init?.();
   });
 
   program
-    .command('clone <sources...>')
-    .description('clone components/styles to your config directory')
-    .option('-d, --dir [directory]', 'destination directory')
+    .command("clone <sources...>")
+    .description("clone blocks to your config directory")
+    .option("-d, --dir [directory]", "destination directory")
+    // TODO: support javascript option
     .option(
-      '-t, --template [template]',
-      'template of the files, typescript (default) | javascript',
+      "-t, --template [template]",
+      "template of the files, typescript (default) | javascript",
       parseTemplate
     )
-    .option('-b, --branch [branch]', 'target branch on github')
-    .option('--storybook', 'storybook file(s) will be included.')
-    .option('--test', 'test file(s) will be included.')
+    .option("-b, --branch [branch]", "target branch on github")
+    .option("--storybook", "storybook file(s) will be included.")
     .action((sources, options, command) => {
       clone?.(sources, options, command);
     });

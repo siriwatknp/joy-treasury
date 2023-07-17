@@ -26,14 +26,12 @@ const DEFAULT_CONFIG = {
   dir: "src/joy-treasury",
   template: "typescript",
   storybook: false,
-  test: false,
   branch: "main",
 } as const;
 const CONFIG_FILE_TEMPLATE = `export default {
   dir: "${DEFAULT_CONFIG.dir}",
   template: "${DEFAULT_CONFIG.template}",
   storybook: ${DEFAULT_CONFIG.storybook},
-  test: ${DEFAULT_CONFIG.test},
   branch: ${DEFAULT_CONFIG.branch},
 };
 `;
@@ -50,25 +48,25 @@ const logger = {
   log: (...text: string[]) => {
     console.log(chalk.bgHex("D4D4D8").hex("3F3F46")("joy-treasury"), ...text);
   },
-  info: function(text: string | ((t: typeof chalk) => string)) {
+  info: function (text: string | ((t: typeof chalk) => string)) {
     this.log(
       chalk.bold(chalk.green("info")),
       typeof text === "function" ? text(chalk) : text
     );
   },
-  config: function(text: string | ((t: typeof chalk) => string)) {
+  config: function (text: string | ((t: typeof chalk) => string)) {
     this.log(
       chalk.bold(chalk.hex("0284C7")("config")),
       typeof text === "function" ? text(chalk) : text
     );
   },
-  success: function(text: string | ((t: typeof chalk) => string)) {
+  success: function (text: string | ((t: typeof chalk) => string)) {
     this.log(
       chalk.bold(chalk.green("success")),
       typeof text === "function" ? text(chalk) : text
     );
   },
-  version: function() {
+  version: function () {
     this.log(
       chalk.bold(chalk.hex("F59E0B")("version")),
       chalk.bold(chalk.yellow(`v${packageJson.version}`))
@@ -107,29 +105,6 @@ function downloadAndExtractCode(
     tar.extract(
       { cwd: root, strip: 2 },
       sources.map((src) => `joy-treasury-${branch}/stories/${src}`)
-    )
-  );
-}
-function downloadTemplates(
-  root: string,
-  sources: string[],
-  branch: string,
-  folder: "src" | "javascript"
-): Promise<void> {
-  return pipeline(
-    got.stream(
-      `https://codeload.github.com/siriwatknp/joy-treasury/tar.gz/${branch}`
-    ),
-    tar.extract(
-      { cwd: root, strip: 4 },
-      sources.map(
-        (
-          src // src is 'template-component-style' => 'component/style'
-        ) =>
-          `joy-treasury-${branch}/packages/templates/${folder}/${src
-            .replace("template-", "")
-            .replace("-", "/")}`
-      )
     )
   );
 }
@@ -192,12 +167,14 @@ const program = createProgram({
       cloneParams.options = options;
     },
     init: () => {
-      fs.writeFile(JOY_TREASURY_CONFIG_FILE, CONFIG_FILE_TEMPLATE, function(
-        err
-      ) {
-        if (err) throw err;
-        logger.success(`${JOY_TREASURY_CONFIG_FILE} is created! 🎉`);
-      });
+      fs.writeFile(
+        JOY_TREASURY_CONFIG_FILE,
+        CONFIG_FILE_TEMPLATE,
+        function (err) {
+          if (err) throw err;
+          logger.success(`${JOY_TREASURY_CONFIG_FILE} is created! 🎉`);
+        }
+      );
     },
   },
 });
@@ -206,7 +183,6 @@ program.parse(process.argv);
 
 async function runCloneCommand() {
   const config = await getConfigFile(cloneParams.options);
-  console.log("config", config);
   if (config.dir && !config.dir.startsWith("/")) {
     config.dir = `/${config.dir}`;
   }
@@ -222,34 +198,18 @@ async function runCloneCommand() {
   if (!fs.existsSync(tempTemplateRoot)) {
     fs.mkdirSync(tempTemplateRoot, { recursive: true });
   }
-  logger.info(
-    `start cloning ${chalk.bold(cloneParams.sources.length)} packages...`
-  );
-  const templateSources = cloneParams.sources.filter((s) =>
-    s.startsWith("template")
-  );
-  const nonTemplateSources = cloneParams.sources.filter(
-    (s) => !s.startsWith("template")
-  );
+  const sources = cloneParams.sources;
+  logger.info(`start cloning ${chalk.bold(sources.length)} packages...`);
   try {
-    if (nonTemplateSources.length) {
-      await downloadAndExtractCode(tempRoot, nonTemplateSources, config.branch);
-    }
-    if (templateSources.length) {
-      await downloadTemplates(
-        tempTemplateRoot,
-        templateSources,
-        config.branch,
-        config.template === "typescript" ? "src" : "javascript"
-      );
+    if (sources.length) {
+      await downloadAndExtractCode(tempRoot, sources, config.branch);
     }
     const excludedFiles = [
       ...(!config.storybook ? [`!${tempRoot}/**/*.stories.*`] : []),
-      ...(!config.test ? [`!${tempRoot}/**/*.test.*`] : []),
     ];
     logger.info("finishing things up...");
     await Promise.all(
-      nonTemplateSources.map((mod) =>
+      sources.map((mod) =>
         cpy(
           [
             // default template is typescript (ts codes live in "src" folder)
@@ -262,16 +222,6 @@ async function runCloneCommand() {
           }
         )
       )
-    );
-    await Promise.all(
-      templateSources.map((mod) => {
-        const [, component, style] = mod.split("-");
-        return cpy(
-          `${tempTemplateRoot}/${component}/${style}/*`,
-          `${actualRoot}/${mod}`,
-          { overwrite: true }
-        );
-      })
     );
   } catch (error) {
     logger.log(chalk.bold(chalk.red("❌ clone failed!")));
