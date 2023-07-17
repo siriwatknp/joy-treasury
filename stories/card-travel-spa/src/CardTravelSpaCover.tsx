@@ -27,7 +27,7 @@ export default function CardTravelSpaCover() {
       <CardCover
         sx={{
           background:
-            "linear-gradient(5deg, rgba(0,0,0,0.4), rgba(0,0,0,0) 25%),linear-gradient(15deg, rgba(0,0,0,0.8), rgba(0,0,0,0) 40%)",
+            "linear-gradient(5deg, rgba(0,0,0,0.4), rgba(0,0,0,0) 200px),linear-gradient(10deg, rgba(0,0,0,0.8), rgba(0,0,0,0) 190px)",
         }}
       />
       <CardContent sx={{ justifyContent: "flex-end", gap: 1 }}>
