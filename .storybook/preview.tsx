@@ -1,9 +1,10 @@
 import React from "react";
 import type { Preview } from "@storybook/react";
-import { Title, Subtitle, Description, Primary, Controls, Stories, Source, Markdown, CodeOrSourceMdx } from '@storybook/blocks';
+import { Title, CodeOrSourceMdx } from "@storybook/blocks";
 import { CssVarsProvider, useColorScheme } from "@mui/joy/styles";
 import CssBaseline from "@mui/joy/CssBaseline";
 import { useDarkMode } from "storybook-dark-mode";
+import "./global.css";
 
 const ModeObserver = () => {
   const isDark = useDarkMode();
@@ -31,7 +32,7 @@ const preview: Preview = {
     },
     docs: {
       page: (props, context) => {
-        console.log('props', props, context)
+        console.log("props", props, context);
         return (
           <>
             <Title>CLI</Title>
