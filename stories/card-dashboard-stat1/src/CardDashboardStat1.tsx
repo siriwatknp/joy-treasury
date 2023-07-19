@@ -4,7 +4,7 @@ import CardContent from "@mui/joy/CardContent";
 import Typography from "@mui/joy/Typography";
 import SvgIcon from "@mui/joy/SvgIcon";
 
-export default function CardFinanceStat1() {
+export default function CardDashboardStat1() {
   return (
     <Card size="lg">
       <CardContent orientation="horizontal">

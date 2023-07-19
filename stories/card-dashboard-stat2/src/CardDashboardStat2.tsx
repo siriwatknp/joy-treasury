@@ -3,7 +3,7 @@ import Card from "@mui/joy/Card";
 import Typography from "@mui/joy/Typography";
 import SvgIcon from "@mui/joy/SvgIcon";
 
-export default function CardFinanceStat2() {
+export default function CardDashboardStat2() {
   return (
     <Card>
       <SvgIcon>

@@ -1,16 +1,16 @@
 import React from "react";
 import type { Meta, StoryObj } from "@storybook/react";
 
-import CardFinanceStat1 from "./CardFinanceStat1";
+import CardDashboardStat2 from "./CardDashboardStat2";
 
 // More on how to set up stories at: https://storybook.js.org/docs/react/writing-stories/introduction
 const meta = {
-  title: "Card/Finance/Stat1",
-  component: CardFinanceStat1,
+  title: "Card/Dashboard/Stat2",
+  component: CardDashboardStat2,
   parameters: {
     layout: "centered",
   },
-} satisfies Meta<typeof CardFinanceStat1>;
+} satisfies Meta<typeof CardDashboardStat2>;
 
 export default meta;
 type Story = StoryObj<typeof meta>;
@@ -19,7 +19,7 @@ type Story = StoryObj<typeof meta>;
 export const Stat1: Story = {
   render: () => (
     <div style={{ width: 300, maxWidth: "100%" }}>
-      <CardFinanceStat1 />
+      <CardDashboardStat2 />
     </div>
   ),
 };
