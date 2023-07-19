@@ -1,4 +1,4 @@
-import React from 'react';
+import React from "react";
 import type { Meta, StoryObj } from "@storybook/react";
 
 import CardTravelSpa from "./CardTravelSpa";
@@ -11,6 +11,23 @@ const meta = {
   parameters: {
     layout: "centered",
   },
+  decorators: [
+    (Story) => (
+      <React.Fragment>
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link
+          rel="preconnect"
+          href="https://fonts.gstatic.com"
+          crossOrigin=""
+        />
+        <link
+          href="https://fonts.googleapis.com/css2?family=Cormorant&display=swap"
+          rel="stylesheet"
+        />
+        <Story />
+      </React.Fragment>
+    ),
+  ],
 } satisfies Meta<typeof CardTravelSpa>;
 
 export default meta;

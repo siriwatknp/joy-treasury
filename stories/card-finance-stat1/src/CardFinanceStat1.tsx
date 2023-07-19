@@ -10,34 +10,37 @@ export default function CardFinanceStat1() {
       <CardContent orientation="horizontal">
         <CardContent sx={{ gap: 1 }}>
           <div>
-            <Typography fontSize="lg" fontWeight="lg">
-              Orders
-            </Typography>
-            <Typography fontSize="xl3" fontWeight="xl">
+            <Typography level="title-lg">Orders</Typography>
+            <Typography component="div" level="h1">
               201
             </Typography>
           </div>
           <Typography
             color="success"
-            sx={{ display: "flex", alignItems: "baseline" }}
+            startDecorator={
+              <SvgIcon color="inherit">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  strokeWidth={1.5}
+                  stroke="currentColor"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    d="M2.25 18L9 11.25l4.306 4.307a11.95 11.95 0 015.814-5.519l2.74-1.22m0 0l-5.94-2.28m5.94 2.28l-2.28 5.941"
+                  />
+                </svg>
+              </SvgIcon>
+            }
           >
-            <SvgIcon sx={{ alignSelf: "center", mr: 1 }}>
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                fill="none"
-                viewBox="0 0 24 24"
-                strokeWidth={1.5}
-                stroke="currentColor"
-              >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  d="M2.25 18L9 11.25l4.306 4.307a11.95 11.95 0 015.814-5.519l2.74-1.22m0 0l-5.94-2.28m5.94 2.28l-2.28 5.941"
-                />
-              </svg>
-            </SvgIcon>
             8.2%{" "}
-            <Typography level="body3" textColor="text.tertiary" sx={{ ml: 1 }}>
+            <Typography
+              level="body-xs"
+              textColor="text.tertiary"
+              sx={{ ml: 1, alignSelf: "last baseline" }}
+            >
               Since last month
             </Typography>
           </Typography>

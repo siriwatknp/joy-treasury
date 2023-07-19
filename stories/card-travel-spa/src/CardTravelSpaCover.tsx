@@ -15,7 +15,6 @@ export default function CardTravelSpaCover() {
       size="lg"
       sx={{
         borderRadius: 0,
-        "--Card-radius": 0,
         boxShadow: "xl",
         width: "100%",
         height: "100%",
@@ -30,19 +29,22 @@ export default function CardTravelSpaCover() {
             "linear-gradient(5deg, rgba(0,0,0,0.4), rgba(0,0,0,0) 200px),linear-gradient(10deg, rgba(0,0,0,0.8), rgba(0,0,0,0) 190px)",
         }}
       />
-      <CardContent sx={{ justifyContent: "flex-end", gap: 1 }}>
+      <CardContent sx={{ justifyContent: "flex-end" }}>
         <Typography
-          level="h2"
-          fontSize="xl4"
-          sx={{ textShadow: "0 0 0.25em rgba(0 0 0 / 0.5)" }}
+          level="h1"
+          sx={{
+            textShadow: "0 0 0.25em rgba(0 0 0 / 0.5)",
+            fontFamily: (theme) =>
+              `Cormorant, ${theme.vars.fontFamily.display}`,
+            letterSpacing: 0,
+          }}
         >
           <Link href="#" overlay textColor="inherit" underline="none">
             Blissful Haven Spa
           </Link>
         </Typography>
         <Typography
-          level="body2"
-          textColor="text.tertiary"
+          level="body-sm"
           fontWeight="lg"
           startDecorator={
             <SvgIcon>

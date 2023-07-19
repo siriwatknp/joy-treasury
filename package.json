@@ -47,7 +47,7 @@
     "@babel/preset-typescript": "7.22.5",
     "@emotion/react": "11.11.1",
     "@emotion/styled": "11.11.0",
-    "@mui/joy": "5.0.0-alpha.87",
+    "@mui/joy": "https://pkg.csb.dev/mui/material-ui/commit/990f9671/@mui/joy",
     "@storybook/addon-essentials": "7.0.27",
     "@storybook/addon-info": "5.3.21",
     "@storybook/addon-links": "7.0.27",

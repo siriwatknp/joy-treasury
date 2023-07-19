@@ -12,10 +12,7 @@ import SvgIcon from "@mui/joy/SvgIcon";
 
 export default function CardTravelSpa() {
   return (
-    <Card
-      size="lg"
-      sx={{ borderRadius: 0, "--Card-radius": 0, boxShadow: "xl" }}
-    >
+    <Card size="lg" sx={{ borderRadius: 0, boxShadow: "xl" }}>
       <CardOverflow>
         <AspectRatio ratio="7/5">
           <img src="https://images.unsplash.com/photo-1470214203634-e436a8848e23" />
@@ -23,11 +20,17 @@ export default function CardTravelSpa() {
       </CardOverflow>
       <CardContent orientation="horizontal" sx={{ alignItems: "center" }}>
         <CardContent sx={{ gap: 1, flex: "max-content" }}>
-          <Typography level="h2" fontSize="xl2">
+          <Typography
+            level="h2"
+            sx={{
+              fontFamily: (theme) =>
+                `Cormorant, ${theme.vars.fontFamily.display}`,
+            }}
+          >
             Blissful Haven Spa
           </Typography>
           <Typography
-            level="body2"
+            level="body-sm"
             fontWeight="lg"
             startDecorator={
               <SvgIcon>
@@ -60,7 +63,7 @@ export default function CardTravelSpa() {
           </CircularProgress>
         </Box>
       </CardContent>
-      <Typography level="body2" sx={{ my: 2 }}>
+      <Typography level="body-sm" sx={{ my: 2 }}>
         Rejuvenate Your Senses in a Serene Oasis of Tranquility, where expert
         therapists pamper you with indulgent treatments, leaving you refreshed,
         revitalized, and radiating with inner harmony.
@@ -73,11 +76,12 @@ export default function CardTravelSpa() {
         }}
       >
         <CardActions sx={{ justifyContent: "space-between" }}>
-          <Typography level="body3">
+          <Typography level="body-xs">
             From <Typography color="success">$ 2,500</Typography> for 8 nights
           </Typography>
           <Link
-            level="body2"
+            level="body-sm"
+            fontWeight="lg"
             component="button"
             endDecorator={
               <SvgIcon>
@@ -94,7 +98,6 @@ export default function CardTravelSpa() {
                 </svg>
               </SvgIcon>
             }
-            sx={{ fontWeight: "lg" }}
           >
             Book now
           </Link>

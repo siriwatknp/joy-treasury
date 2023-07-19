@@ -9,7 +9,7 @@ import SvgIcon from "@mui/joy/SvgIcon";
 
 export default function CardNewsMaldives() {
   return (
-    <Card sx={{ borderRadius: 0, "--Card-radius": 0 }}>
+    <Card sx={{ borderRadius: 0 }}>
       <CardOverflow>
         <AspectRatio>
           <img src="https://images.unsplash.com/photo-1624995256645-3e497ca1b29c" />
@@ -29,13 +29,11 @@ export default function CardNewsMaldives() {
         </AspectRatio>
       </CardOverflow>
       <CardContent sx={{ gap: 1 }}>
-        <Typography level="body3" fontWeight="lg">
-          July 16 2023
-        </Typography>
-        <Typography level="h2" fontSize="xl">
+        <Typography level="body-xs">July 16 2023</Typography>
+        <Typography level="title-lg">
           Discover the Enchanting Beauty of the Maldives
         </Typography>
-        <Typography level="body2">
+        <Typography level="body-sm">
           The Maldives is a tropical paradise consisting of pristine islands,
           turquoise waters, and vibrant coral reefs. It offers a perfect getaway
           for those seeking relaxation and natural beauty.
@@ -43,6 +41,8 @@ export default function CardNewsMaldives() {
       </CardContent>
       <Link
         overlay
+        level="body-sm"
+        fontWeight="lg"
         component="button"
         startDecorator={
           <SvgIcon>
@@ -61,7 +61,6 @@ export default function CardNewsMaldives() {
             </svg>
           </SvgIcon>
         }
-        sx={{ fontWeight: "lg", fontSize: "sm" }}
       >
         Find out more
       </Link>
