@@ -31,8 +31,7 @@ const preview: Preview = {
       expanded: false,
     },
     docs: {
-      page: (props, context) => {
-        console.log("props", props, context);
+      page: () => {
         return (
           <>
             <Title>CLI</Title>

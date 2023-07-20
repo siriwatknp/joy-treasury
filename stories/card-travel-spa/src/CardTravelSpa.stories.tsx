@@ -34,7 +34,7 @@ export default meta;
 type Story = StoryObj<typeof meta>;
 
 // More on writing stories with args: https://storybook.js.org/docs/react/writing-stories/args
-export const Spa: Story = {
+export const Block: Story = {
   render: () => (
     <div style={{ width: 400, maxWidth: "100%" }}>
       <CardTravelSpa />
@@ -42,7 +42,7 @@ export const Spa: Story = {
   ),
 };
 
-export const SpaCover: Story = {
+export const Block2: Story = {
   render: () => (
     <div style={{ width: 400, maxWidth: "100%", height: 600 }}>
       <CardTravelSpaCover />

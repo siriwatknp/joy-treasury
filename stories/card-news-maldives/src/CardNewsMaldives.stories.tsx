@@ -1,4 +1,4 @@
-import React from 'react';
+import React from "react";
 import type { Meta, StoryObj } from "@storybook/react";
 
 import CardNewsMaldives from "./CardNewsMaldives";
@@ -16,7 +16,7 @@ export default meta;
 type Story = StoryObj<typeof meta>;
 
 // More on writing stories with args: https://storybook.js.org/docs/react/writing-stories/args
-export const Maldives: Story = {
+export const Block: Story = {
   render: () => (
     <div style={{ maxWidth: 343 }}>
       <CardNewsMaldives />
