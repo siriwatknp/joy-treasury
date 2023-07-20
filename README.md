@@ -1,33 +1,26 @@
-# Joy Treasury CLI
+# 👋 Welcome! to Joy Treasury
 
-a cli for pulling code from joy-treasury project when you need to extend or customize the existing code.
+Joy Treasury is a collection of blocks that are ready-to-use for [Joy UI](https://mui.com/joy-ui/getting-started/) projects.
 
-## Installation
+The blocks are made to live from design inspiration resources such as [Dribbble](https://dribbble.com/) and [Pinterest](https://www.pinterest.com/), etc.
 
-**npm**
+There are 2 way to use the blocks in your project.
 
-```bash
-npm install joy-treasury -g
-```
+- Copy and paste: open the "Doc" of the block you want and copy the code. Then paste it to your project, it should work instantly (open [an issue](https://github.com/siriwatknp/joy-treasury/issues/new) if it does not).
+- Use [CLI](#cli) to clone the latest blocks to your project.
 
-**yarn**
+## CLI
 
-```bash
-yarn global add joy-treasury
-```
-
-## Tutorial
-
-1. go to [joy-treasury github](https://github.com/siriwatknp/joy-treasury/tree/next)
-2. find a module you want to clone in `packages` (let's say that I want the `packages/template-card-social`)
+1. go to [joy-treasury](https://siriwatknp.github.io/joy-treasury/)
+2. find a block you want to clone from the sidebar (let's say that I want the `Card/News/Maldives`)
 3. open your terminal and go to your root project directory
-4. run `joy-treasury clone template-card-social`
+4. run `npx joy-treasury@latest clone card-news-maldives`
 5. you will see that the code is downloaded to `src/joy-treasury` folder (in your local project)
 
-## Usage
+> Note: to clone multiple blocks, just add more names to the command with a space in between, e.g. `npx joy-treasury clone [blocks...]`
 
 ```bash
-Usage: joy-treasury [options] [command]
+Usage: npx joy-treasury@latest [options] [command]
 
 Options:
   -v, --version                 output the current version
@@ -44,7 +37,7 @@ Commands:
 create a `joy-treasury.config.js` file that will be used when running `clone`.
 
 ```bash
-joy-treasury init
+npx joy-treasury@latest init
 ```
 
 > Note that config file will be overridden by cli options (if specified)
@@ -52,7 +45,7 @@ joy-treasury init
 ### `clone`
 
 ```bash
-Usage: joy-treasury clone [options] <sources...>
+Usage: npx joy-treasury@latest clone [options] <sources...>
 
 clone components/styles to your config directory
 
@@ -68,5 +61,5 @@ Options:
 **clone multiple modules**
 
 ```bash
-joy-treasury clone component-info style-info-apex
+npx joy-treasury@latest clone card-news-maldives card-travel-spa
 ```
