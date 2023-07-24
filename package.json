@@ -2,7 +2,7 @@
   "name": "joy-treasury",
   "description": "A CLI to clone Joy UI blocks into your project.",
   "author": "siriwatknp",
-  "version": "0.1.2",
+  "version": "0.1.3",
   "homepage": "https://siriwatknp.github.io/joy-treasury/",
   "license": "MIT",
   "publishConfig": {
