@@ -104,7 +104,7 @@ function downloadAndExtractCode(
     ),
     tar.extract(
       { cwd: root, strip: 2 },
-      sources.map((src) => `joy-treasury-${branch}/stories/${src}`)
+      sources.map((src) => `joy-treasury-${branch}/blocks/${src}`)
     )
   );
 }

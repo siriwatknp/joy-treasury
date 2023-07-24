@@ -1,32 +1,40 @@
-import type { StorybookConfig } from '@storybook/react-webpack5';
+import type { StorybookConfig } from "@storybook/react-webpack5";
 
 const config: StorybookConfig = {
-  stories: ['../docs/**/*.mdx', '../stories/**/*.mdx', '../stories/**/*.stories.@(js|jsx|ts|tsx)'],
+  stories: [
+    "../docs/**/*.mdx",
+    "../blocks/**/*.mdx",
+    "../blocks/**/*.stories.@(js|jsx|ts|tsx)",
+  ],
   addons: [
-    '@storybook/addon-links',
-    '@storybook/addon-essentials',
-    'storybook-dark-mode',
+    "@storybook/addon-links",
+    "@storybook/addon-essentials",
+    "storybook-dark-mode",
   ],
   framework: {
-    name: '@storybook/react-webpack5',
+    name: "@storybook/react-webpack5",
     options: {},
   },
   docs: {
-    autodocs: 'tag',
+    autodocs: "tag",
   },
   async webpackFinal(config, { configType }) {
     if (config.module) {
       config.module.rules = [
-        ...(config.module.rules || []).map(rule => {
+        ...(config.module.rules || []).map((rule) => {
           // This `/\.(js|mjs|jsx)$/` regex is added by the MDX plugin and I noticed
           // that I need to target that one
-          if (typeof rule === 'object' && rule && String(rule.test) === String(/\.(mjs|tsx?|jsx?)$/)) {
-            rule = { ...rule, resourceQuery: { not: [/raw/] } }
+          if (
+            typeof rule === "object" &&
+            rule &&
+            String(rule.test) === String(/\.(mjs|tsx?|jsx?)$/)
+          ) {
+            rule = { ...rule, resourceQuery: { not: [/raw/] } };
           }
-    
-          return rule
-        })
-      ]
+
+          return rule;
+        }),
+      ];
     }
     return config;
   },

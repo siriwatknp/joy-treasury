@@ -1,5 +1,5 @@
 ---
-to: ../stories/<%=h.toNamePath(name)%>/src/<%=h.toName(name)%>.stories.tsx
+to: ../blocks/<%=h.toNamePath(name)%>/src/<%=h.toName(name)%>.stories.tsx
 unless_exists: true
 ---
 import React from "react";

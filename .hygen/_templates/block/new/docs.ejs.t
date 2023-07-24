@@ -1,5 +1,5 @@
 ---
-to: ../stories/<%=h.toNamePath(name)%>/usage.mdx
+to: ../blocks/<%=h.toNamePath(name)%>/usage.mdx
 unless_exists: true
 ---
 import { Meta, Source } from "@storybook/blocks";
