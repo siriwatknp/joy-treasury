@@ -4,8 +4,19 @@ import {
   STORY_ERRORED,
   STORY_MISSING,
 } from "@storybook/core-events";
-
 import ReactGA from "react-ga4";
+
+// https://storybook.js.org/docs/react/configure/features-and-behavior
+addons.setConfig({
+  showNav: true,
+  showPanel: false,
+  panelPosition: "bottom",
+  enableShortcuts: true,
+  showToolbar: true,
+  theme: undefined,
+  selectedPanel: undefined,
+  initialActive: "sidebar",
+});
 
 // need to use .default because of ES build (type="module" in package.json)
 type GA4 = typeof ReactGA & { default: typeof ReactGA };
