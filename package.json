@@ -26,7 +26,7 @@
     "typecheck": "tsc --noEmit",
     "storybook": "storybook dev -p 6006",
     "build-storybook": "storybook build",
-    "new:block": "cd .hygen && hygen block new"
+    "new-block": "cd .hygen && hygen block new"
   },
   "dependencies": {
     "@types/got": "9.6.11",
