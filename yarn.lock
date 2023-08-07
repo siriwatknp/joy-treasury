@@ -1282,7 +1282,7 @@
   resolved "https://registry.yarnpkg.com/@babel/regjsgen/-/regjsgen-0.8.0.tgz#f0ba69b075e1f05fb2825b7fad991e7adbb18310"
   integrity sha512-x/rqGMdzj+fWZvCOYForTghzbtqPDZ5gPwaoNGHdgDfF2QA/XZbCBp4Moo5scrkAMPhB7z26XM/AaHuIJdgauA==
 
-"@babel/runtime@^7.0.0", "@babel/runtime@^7.1.2", "@babel/runtime@^7.12.13", "@babel/runtime@^7.12.5", "@babel/runtime@^7.17.8", "@babel/runtime@^7.18.3", "@babel/runtime@^7.22.6", "@babel/runtime@^7.3.1", "@babel/runtime@^7.5.5", "@babel/runtime@^7.7.2", "@babel/runtime@^7.7.6", "@babel/runtime@^7.8.4", "@babel/runtime@^7.9.2":
+"@babel/runtime@^7.0.0", "@babel/runtime@^7.1.2", "@babel/runtime@^7.12.13", "@babel/runtime@^7.12.5", "@babel/runtime@^7.17.8", "@babel/runtime@^7.18.3", "@babel/runtime@^7.21.0", "@babel/runtime@^7.22.5", "@babel/runtime@^7.22.6", "@babel/runtime@^7.3.1", "@babel/runtime@^7.5.5", "@babel/runtime@^7.7.2", "@babel/runtime@^7.7.6", "@babel/runtime@^7.8.4", "@babel/runtime@^7.9.2":
   version "7.22.6"
   resolved "https://registry.yarnpkg.com/@babel/runtime/-/runtime-7.22.6.tgz#57d64b9ae3cff1d67eb067ae117dac087f5bd438"
   integrity sha512-wDb5pWm4WDdF6LFUde3Jl8WzPA+3ZbxYqkC6xAXuD3irdEHN1k0NfTRrJD8ZD378SJ61miMLCqIOXYhd8x+AJQ==
@@ -2109,77 +2109,83 @@
     call-me-maybe "^1.0.1"
     glob-to-regexp "^0.3.0"
 
-"@mui/base@https://pkg.csb.dev/mui/material-ui/commit/990f9671/@mui/base":
-  version "5.0.0-beta.7"
-  resolved "https://pkg.csb.dev/mui/material-ui/commit/990f9671/@mui/base#e139e888fce0bbb3c64e92c8a5bf6755d8ff3cfc"
+"@mui/base@5.0.0-beta.9":
+  version "5.0.0-beta.9"
+  resolved "https://registry.yarnpkg.com/@mui/base/-/base-5.0.0-beta.9.tgz#e88d7052aa6d97c1e57d5ce2a4e2edf898db90ec"
+  integrity sha512-gm6gnPnc/lS5Z3neH0iuOrK7IbS02+oh6KsMtXYLhI6bJpHs+PNWFsBmISx7x4FSPVJZvZkb8Bw6pEXpIMFt7Q==
   dependencies:
     "@babel/runtime" "^7.22.6"
     "@emotion/is-prop-valid" "^1.2.1"
-    "@mui/types" "https://pkg.csb.dev/mui/material-ui/commit/990f9671/@mui/types"
-    "@mui/utils" "https://pkg.csb.dev/mui/material-ui/commit/990f9671/@mui/utils"
+    "@mui/types" "^7.2.4"
+    "@mui/utils" "^5.14.3"
     "@popperjs/core" "^2.11.8"
-    clsx "^1.2.1"
+    clsx "^2.0.0"
     prop-types "^15.8.1"
     react-is "^18.2.0"
 
-"@mui/core-downloads-tracker@^5.14.0":
-  version "5.14.0"
-  resolved "https://registry.yarnpkg.com/@mui/core-downloads-tracker/-/core-downloads-tracker-5.14.0.tgz#ca394a1c53c215f4c6bf7f7460d8211298d7bbf6"
-  integrity sha512-SYBOVCatVDUf/lbrLGah09bHhX5WfUXg7kSskfLILr6SvKRni0NLp0aonxQ0SMALVVK3Qwa6cW4CdWuwS0gC1w==
+"@mui/core-downloads-tracker@^5.14.3":
+  version "5.14.3"
+  resolved "https://registry.yarnpkg.com/@mui/core-downloads-tracker/-/core-downloads-tracker-5.14.3.tgz#474689f4d691993376e8a1ca07e08d4545275082"
+  integrity sha512-QxvrcDqphZoXRjsAmCaQylmWjC/8/qKWwIde1MJMna5YIst3R9O0qhKRPu36/OE2d8AeTbCVjRcRvNqhhW8jyg==
 
-"@mui/joy@https://pkg.csb.dev/mui/material-ui/commit/990f9671/@mui/joy":
-  version "5.0.0-alpha.87"
-  resolved "https://pkg.csb.dev/mui/material-ui/commit/990f9671/@mui/joy#ad89cade3bdf6d4cf00f7f47335cd616b9088195"
+"@mui/joy@5.0.0-beta.0":
+  version "5.0.0-beta.0"
+  resolved "https://registry.yarnpkg.com/@mui/joy/-/joy-5.0.0-beta.0.tgz#adbdf6877ad7d2707befc3ca80a8bae08cb759b4"
+  integrity sha512-WDGlbEMqXPmuwgUPEgJEPeOUJD46WragfPqTjoWEp+//0iE8kcn+YfFVgsoY31uID5UwcFWQRupxui872slANA==
   dependencies:
     "@babel/runtime" "^7.22.6"
-    "@mui/base" "https://pkg.csb.dev/mui/material-ui/commit/990f9671/@mui/base"
-    "@mui/core-downloads-tracker" "^5.14.0"
-    "@mui/system" "https://pkg.csb.dev/mui/material-ui/commit/990f9671/@mui/system"
-    "@mui/types" "https://pkg.csb.dev/mui/material-ui/commit/990f9671/@mui/types"
-    "@mui/utils" "https://pkg.csb.dev/mui/material-ui/commit/990f9671/@mui/utils"
-    clsx "^1.2.1"
+    "@mui/base" "5.0.0-beta.9"
+    "@mui/core-downloads-tracker" "^5.14.3"
+    "@mui/system" "^5.14.3"
+    "@mui/types" "^7.2.4"
+    "@mui/utils" "^5.14.3"
+    clsx "^2.0.0"
     csstype "^3.1.2"
     prop-types "^15.8.1"
     react-is "^18.2.0"
 
-"@mui/private-theming@https://pkg.csb.dev/mui/material-ui/commit/990f9671/@mui/private-theming":
+"@mui/private-theming@^5.13.7":
   version "5.13.7"
-  resolved "https://pkg.csb.dev/mui/material-ui/commit/990f9671/@mui/private-theming#21119aa3660b6f9512e61d31221a8d57708dc820"
+  resolved "https://registry.yarnpkg.com/@mui/private-theming/-/private-theming-5.13.7.tgz#2f8ef5da066f3c6c6423bd4260d003a28d10b099"
+  integrity sha512-qbSr+udcij5F9dKhGX7fEdx2drXchq7htLNr2Qg2Ma+WJ6q0ERlEqGSBiPiVDJkptcjeVL4DGmcf1wl5+vD4EA==
   dependencies:
-    "@babel/runtime" "^7.22.6"
-    "@mui/utils" "https://pkg.csb.dev/mui/material-ui/commit/990f9671/@mui/utils"
+    "@babel/runtime" "^7.22.5"
+    "@mui/utils" "^5.13.7"
     prop-types "^15.8.1"
 
-"@mui/styled-engine@https://pkg.csb.dev/mui/material-ui/commit/990f9671/@mui/styled-engine":
+"@mui/styled-engine@^5.13.2":
   version "5.13.2"
-  resolved "https://pkg.csb.dev/mui/material-ui/commit/990f9671/@mui/styled-engine#4d5dc253fd626824579737ec693c426788351ca0"
+  resolved "https://registry.yarnpkg.com/@mui/styled-engine/-/styled-engine-5.13.2.tgz#c87bd61c0ab8086d34828b6defe97c02bcd642ef"
+  integrity sha512-VCYCU6xVtXOrIN8lcbuPmoG+u7FYuOERG++fpY74hPpEWkyFQG97F+/XfTQVYzlR2m7nPjnwVUgATcTCMEaMvw==
   dependencies:
-    "@babel/runtime" "^7.22.6"
+    "@babel/runtime" "^7.21.0"
     "@emotion/cache" "^11.11.0"
     csstype "^3.1.2"
     prop-types "^15.8.1"
 
-"@mui/system@https://pkg.csb.dev/mui/material-ui/commit/990f9671/@mui/system":
-  version "5.14.0"
-  resolved "https://pkg.csb.dev/mui/material-ui/commit/990f9671/@mui/system#0c56e8542a40fa78714ecfd4a0f7b4fe8fd12c28"
+"@mui/system@^5.14.3":
+  version "5.14.3"
+  resolved "https://registry.yarnpkg.com/@mui/system/-/system-5.14.3.tgz#71aa88433649a23dfa5c102cef8a3c5b1ac40ac6"
+  integrity sha512-b+C+j9+75+/iIYSa+1S4eCMc9MDNrj9hzWfExJqS2GffuNocRagjBZFyjtMqsLWLxMxQIX8Cg6j0hAioiw+WfQ==
   dependencies:
     "@babel/runtime" "^7.22.6"
-    "@mui/private-theming" "https://pkg.csb.dev/mui/material-ui/commit/990f9671/@mui/private-theming"
-    "@mui/styled-engine" "https://pkg.csb.dev/mui/material-ui/commit/990f9671/@mui/styled-engine"
-    "@mui/types" "https://pkg.csb.dev/mui/material-ui/commit/990f9671/@mui/types"
-    "@mui/utils" "https://pkg.csb.dev/mui/material-ui/commit/990f9671/@mui/utils"
-    clsx "^1.2.1"
+    "@mui/private-theming" "^5.13.7"
+    "@mui/styled-engine" "^5.13.2"
+    "@mui/types" "^7.2.4"
+    "@mui/utils" "^5.14.3"
+    clsx "^2.0.0"
     csstype "^3.1.2"
     prop-types "^15.8.1"
 
-"@mui/types@https://pkg.csb.dev/mui/material-ui/commit/990f9671/@mui/types":
+"@mui/types@^7.2.4":
   version "7.2.4"
-  resolved "https://pkg.csb.dev/mui/material-ui/commit/990f9671/@mui/types#71b3169bc28877e6778b0c9d6c370d2479a610b6"
+  resolved "https://registry.yarnpkg.com/@mui/types/-/types-7.2.4.tgz#b6fade19323b754c5c6de679a38f068fd50b9328"
+  integrity sha512-LBcwa8rN84bKF+f5sDyku42w1NTxaPgPyYKODsh01U1fVstTClbUoSA96oyRBnSNyEiAVjKm6Gwx9vjR+xyqHA==
 
-"@mui/utils@https://pkg.csb.dev/mui/material-ui/commit/990f9671/@mui/utils":
-  version "5.13.7"
-  uid f8e536f3c3948219d50ed460698e60e1725eae12
-  resolved "https://pkg.csb.dev/mui/material-ui/commit/990f9671/@mui/utils#f8e536f3c3948219d50ed460698e60e1725eae12"
+"@mui/utils@^5.13.7", "@mui/utils@^5.14.3":
+  version "5.14.3"
+  resolved "https://registry.yarnpkg.com/@mui/utils/-/utils-5.14.3.tgz#76d8151c23d2c2a871e98b90add57a8fd01d5d80"
+  integrity sha512-gZ6Etw+ppO43GYc1HFZSLjwd4DoZoa+RrYTD25wQLfzcSoPjVoC/zZqA2Lkq0zjgwGBQOSxKZI6jfp9uXR+kgw==
   dependencies:
     "@babel/runtime" "^7.22.6"
     "@types/prop-types" "^15.7.5"
@@ -4825,10 +4831,10 @@ clone@^1.0.2:
   resolved "https://registry.yarnpkg.com/clone/-/clone-1.0.4.tgz#da309cc263df15994c688ca902179ca3c7cd7c7e"
   integrity sha512-JQHZ2QMW6l3aH/j6xCqQThY/9OH4D/9ls34cgkUBiEeocRTU04tHfKPBsUK1PqZCUQM7GiA0IIXJSuXHI64Kbg==
 
-clsx@^1.2.1:
-  version "1.2.1"
-  resolved "https://registry.yarnpkg.com/clsx/-/clsx-1.2.1.tgz#0ddc4a20a549b59c93a4116bb26f5294ca17dc12"
-  integrity sha512-EcR6r5a8bj6pu3ycsa/E/cKVGuTgZJZdsyUYHOksG/UHIiKfjxzRxYJpyVBwYaQeOvghal9fcc4PidlgzugAQg==
+clsx@^2.0.0:
+  version "2.0.0"
+  resolved "https://registry.yarnpkg.com/clsx/-/clsx-2.0.0.tgz#12658f3fd98fafe62075595a5c30e43d18f3d00b"
+  integrity sha512-rQ1+kcj+ttHG0MKVGBUXwayCCF1oh39BF5COIpRzuCEv8Mwjv0XucrI2ExNTOn9IlLifGClWQcU9BrZORvtw6Q==
 
 co@^4.6.0:
   version "4.6.0"
