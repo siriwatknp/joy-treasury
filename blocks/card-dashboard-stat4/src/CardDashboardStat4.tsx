@@ -3,8 +3,8 @@ import AspectRatio from "@mui/joy/AspectRatio";
 import Card from "@mui/joy/Card";
 import CardContent from "@mui/joy/CardContent";
 import IconButton from "@mui/joy/IconButton";
-import Typography from "@mui/joy/Typography";
 import SvgIcon from "@mui/joy/SvgIcon";
+import Typography from "@mui/joy/Typography";
 
 export default function CardDashboardStat4() {
   return (

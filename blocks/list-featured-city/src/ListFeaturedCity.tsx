@@ -1,12 +1,12 @@
 import React from "react";
-import List from "@mui/joy/List";
-import ListItem from "@mui/joy/ListItem";
+import AspectRatio from "@mui/joy/AspectRatio";
 import Card from "@mui/joy/Card";
 import CardContent from "@mui/joy/CardContent";
-import AspectRatio from "@mui/joy/AspectRatio";
-import Typography from "@mui/joy/Typography";
 import Link from "@mui/joy/Link";
+import List from "@mui/joy/List";
+import ListItem from "@mui/joy/ListItem";
 import SvgIcon from "@mui/joy/SvgIcon";
+import Typography from "@mui/joy/Typography";
 
 export default function ListFeaturedCity() {
   return (

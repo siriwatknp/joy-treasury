@@ -1,6 +1,5 @@
 import React from "react";
 import type { Meta, StoryObj } from "@storybook/react";
-
 import CardCoverInterest from "./CardCoverInterest";
 
 const meta = {

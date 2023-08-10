@@ -1,7 +1,7 @@
 import React from "react";
 import AspectRatio from "@mui/joy/AspectRatio";
-import Button from "@mui/joy/Button";
 import Box from "@mui/joy/Box";
+import Button from "@mui/joy/Button";
 import SvgIcon from "@mui/joy/SvgIcon";
 
 export default function InputColorPicker() {

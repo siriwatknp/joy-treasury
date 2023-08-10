@@ -1,6 +1,5 @@
 import React from "react";
 import type { Meta, StoryObj } from "@storybook/react";
-
 import CardTravelSpa from "./CardTravelSpa";
 import CardTravelSpaCover from "./CardTravelSpaCover";
 

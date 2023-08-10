@@ -1,10 +1,10 @@
 import React from "react";
 import Card from "@mui/joy/Card";
-import CardCover from "@mui/joy/CardCover";
 import CardContent from "@mui/joy/CardContent";
-import Typography from "@mui/joy/Typography";
+import CardCover from "@mui/joy/CardCover";
 import Link from "@mui/joy/Link";
 import SvgIcon from "@mui/joy/SvgIcon";
+import Typography from "@mui/joy/Typography";
 
 export default function CardCoverTrip() {
   return (

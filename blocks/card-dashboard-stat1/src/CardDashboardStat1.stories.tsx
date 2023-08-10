@@ -1,6 +1,5 @@
 import React from "react";
 import type { Meta, StoryObj } from "@storybook/react";
-
 import CardDashboardStat1 from "./CardDashboardStat1";
 
 // More on how to set up stories at: https://storybook.js.org/docs/react/writing-stories/introduction

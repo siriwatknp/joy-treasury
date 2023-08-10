@@ -1,6 +1,5 @@
 import React from "react";
 import type { Meta, StoryObj } from "@storybook/react";
-
 import NavSidebarDashboard from "./NavSidebarDashboard";
 
 const meta = {
@@ -21,5 +20,3 @@ export const Block: Story = {
     </div>
   ),
 };
-
-

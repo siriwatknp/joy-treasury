@@ -3,12 +3,12 @@ import AspectRatio from "@mui/joy/AspectRatio";
 import Box from "@mui/joy/Box";
 import Card from "@mui/joy/Card";
 import CardActions from "@mui/joy/CardActions";
-import CardOverflow from "@mui/joy/CardOverflow";
 import CardContent from "@mui/joy/CardContent";
+import CardOverflow from "@mui/joy/CardOverflow";
 import CircularProgress from "@mui/joy/CircularProgress";
 import Link from "@mui/joy/Link";
-import Typography from "@mui/joy/Typography";
 import SvgIcon from "@mui/joy/SvgIcon";
+import Typography from "@mui/joy/Typography";
 
 export default function CardTravelSpa() {
   return (
