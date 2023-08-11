@@ -44,8 +44,10 @@ export function Page({ children }: React.PropsWithChildren<{}>) {
         gridTemplateAreas: '"sidebar header" "sidebar main"',
         gridTemplateColumns:
           "clamp(0px, (100vw - var(--view-breakpoint)) * 999, var(--Sidebar-width)) 1fr",
-        gridTemplateRows: "auto 1fr",
+        gridTemplateRows:
+          "clamp(0px, (var(--view-breakpoint) - 100vw) * 999, var(--Header-height)) 1fr",
         transition: "grid-template-columns 0.2s",
+        bgcolor: "neutral.800",
       }}
     >
       <GlobalStyles
@@ -86,6 +88,9 @@ export function Sidebar({ children }: React.PropsWithChildren<{}>) {
       />
       <Sheet
         component="nav"
+        variant="solid"
+        color="neutral"
+        invertedColors
         sx={{
           gridArea: "sidebar",
           position: {
@@ -106,8 +111,7 @@ export function Sidebar({ children }: React.PropsWithChildren<{}>) {
           display: "flex",
           flexDirection: "column",
           gap: 1,
-          borderRight: "1px solid",
-          borderColor: "divider",
+          bgcolor: "neutral.800",
         }}
       >
         {children}
@@ -118,7 +122,17 @@ export function Sidebar({ children }: React.PropsWithChildren<{}>) {
 
 export function Main({ children }: React.PropsWithChildren<{}>) {
   return (
-    <Box component="main" sx={{ gridArea: "main" }}>
+    <Box
+      component="main"
+      sx={{
+        gridArea: "main",
+        bgcolor: "background.surface",
+        borderTopLeftRadius:
+          "clamp(0px, (100vw - var(--view-breakpoint)) * 999, 40px)",
+        marginTop: "clamp(0px, (100vw - var(--view-breakpoint)) * 999, 12px)",
+        transition: "border-radius 0.2s, margin-top 0.2s",
+      }}
+    >
       {children}
     </Box>
   );
@@ -133,6 +147,8 @@ export function Header() {
         height: "var(--Header-height)",
         position: "sticky",
         top: 0,
+        transform: { md: "translateY(-120%)" },
+        transition: "transform 0.3s",
         px: { xs: 2, sm: 3 },
         display: "flex",
         gap: 1.5,
@@ -168,7 +184,7 @@ export function Header() {
   );
 }
 
-export default function LayoutDashboardStarter() {
+export default function LayoutDashboardCurve() {
   return (
     <Page>
       <Sidebar>Navigation goes here.</Sidebar>
