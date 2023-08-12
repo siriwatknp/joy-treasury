@@ -20,7 +20,7 @@ export const Block: Story = {
         width: 360,
         padding: 20,
         maxWidth: "100%",
-        resize: "both",
+        resize: "horizontal",
         overflow: "auto",
       }}
     >

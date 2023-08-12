@@ -12,7 +12,7 @@ export default function CardFeaturedCity() {
       variant="plain"
       sx={{ boxShadow: "none", bgcolor: "transparent", borderRadius: "32px" }}
     >
-      <AspectRatio ratio="3/4" sx={{ boxShadow: "md" }}>
+      <AspectRatio ratio="3/4" maxHeight={320} sx={{ boxShadow: "md" }}>
         <img src="https://images.unsplash.com/photo-1512453979798-5ea266f8880c?fm=jpg&fit=crop&w=1080&q=80&fit=max" />
       </AspectRatio>
       <CardContent sx={{ gap: 1 }}>

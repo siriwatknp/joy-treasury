@@ -10,12 +10,16 @@ import Typography from "@mui/joy/Typography";
 export default function CardLinkEmbed() {
   return (
     <Card orientation="horizontal" variant="outlined" sx={{ gap: 2.5 }}>
-      <CardOverflow>
+      <CardOverflow sx={{ display: "flex" }}>
         <AspectRatio
           variant="solid"
           color="neutral"
           ratio="1"
-          sx={{ minWidth: 140, "& > *": { bgcolor: "neutral.800" } }}
+          sx={{
+            display: "flex",
+            minWidth: 140,
+            "& > div": { bgcolor: "neutral.800" },
+          }}
         >
           <div>
             <SvgIcon fontSize="xl4">

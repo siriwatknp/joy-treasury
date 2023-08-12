@@ -75,14 +75,14 @@ export default function CardCoverStream() {
             src="https://store-images.s-microsoft.com/image/apps.6899.14495311847124170.e89a4dce-fd9a-4a10-b8e4-a6c3aa1c055e.bcea8b9e-9a72-45eb-a2fc-e265b7dc1915"
             sx={{ borderRadius: "md" }}
           />
-          <div>
+          <Box sx={{ flex: 1 }}>
             <Typography level="body-sm" textColor="text.primary">
               Disney+ Hotstar
             </Typography>
             <Typography level="body-xs" lineHeight="xs">
               Global & local movies & series
             </Typography>
-          </div>
+          </Box>
           <Box sx={{ display: "flex", flexDirection: "column", gap: 0.5 }}>
             <Button
               size="sm"

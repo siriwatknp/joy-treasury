@@ -15,7 +15,15 @@ type Story = StoryObj<typeof meta>;
 
 export const Block: Story = {
   render: () => (
-    <div style={{ width: "max-content", maxWidth: "100%" }}>
+    <div
+      style={{
+        width: "max-content",
+        padding: 20,
+        maxWidth: "100%",
+        resize: "horizontal",
+        overflow: "auto",
+      }}
+    >
       <CardLinkEmbed />
     </div>
   ),

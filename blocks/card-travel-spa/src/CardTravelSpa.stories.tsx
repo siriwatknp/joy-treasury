@@ -35,7 +35,15 @@ type Story = StoryObj<typeof meta>;
 // More on writing stories with args: https://storybook.js.org/docs/react/writing-stories/args
 export const Block: Story = {
   render: () => (
-    <div style={{ width: 400, maxWidth: "100%" }}>
+    <div
+      style={{
+        width: 440,
+        padding: 20,
+        maxWidth: "100%",
+        resize: "horizontal",
+        overflow: "auto",
+      }}
+    >
       <CardTravelSpa />
     </div>
   ),
@@ -43,7 +51,16 @@ export const Block: Story = {
 
 export const Block2: Story = {
   render: () => (
-    <div style={{ width: 400, maxWidth: "100%", height: 600 }}>
+    <div
+      style={{
+        width: 440,
+        height: 600,
+        padding: 20,
+        maxWidth: "100%",
+        resize: "horizontal",
+        overflow: "auto",
+      }}
+    >
       <CardTravelSpaCover />
     </div>
   ),
