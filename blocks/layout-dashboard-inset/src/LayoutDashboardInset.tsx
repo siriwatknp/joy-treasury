@@ -125,6 +125,7 @@ export function Main({ children }: React.PropsWithChildren<{}>) {
       component="main"
       sx={{
         gridArea: "main",
+        minWidth: 0,
         boxShadow: "sm",
         bgcolor: "background.surface",
         borderWidth: { xs: 0, md: 1 },

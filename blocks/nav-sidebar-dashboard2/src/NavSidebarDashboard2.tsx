@@ -25,7 +25,7 @@ export default function NavSidebarDashboard2() {
               height: "60%",
               display: "block",
               position: "absolute",
-              left: 0,
+              left: -1,
               top: "20%",
               width: 4,
               borderTopRightRadius: 4,

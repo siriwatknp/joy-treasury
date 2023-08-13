@@ -35,7 +35,7 @@ export default function CardDashboardStat6() {
     <Box
       sx={{
         display: "grid",
-        gridTemplateColumns: "repeat(2, minmax(300px, 1fr))",
+        gridTemplateColumns: "repeat(auto-fill, minmax(min(240px, 100%), 1fr))",
         gap: 3,
       }}
     >

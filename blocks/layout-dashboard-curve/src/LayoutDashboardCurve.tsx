@@ -125,6 +125,7 @@ export function Main({ children }: React.PropsWithChildren<{}>) {
     <Box
       component="main"
       sx={{
+        minWidth: 0,
         gridArea: "main",
         bgcolor: "background.surface",
         borderTopLeftRadius:

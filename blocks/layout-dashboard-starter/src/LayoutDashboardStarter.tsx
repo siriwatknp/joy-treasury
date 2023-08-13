@@ -118,7 +118,7 @@ export function Sidebar({ children }: React.PropsWithChildren<{}>) {
 
 export function Main({ children }: React.PropsWithChildren<{}>) {
   return (
-    <Box component="main" sx={{ gridArea: "main" }}>
+    <Box component="main" sx={{ gridArea: "main", minWidth: 0 }}>
       {children}
     </Box>
   );

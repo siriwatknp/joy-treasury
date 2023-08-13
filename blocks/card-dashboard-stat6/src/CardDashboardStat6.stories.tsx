@@ -6,7 +6,7 @@ const meta = {
   title: "Card/Dashboard/Stat6",
   component: CardDashboardStat6,
   parameters: {
-    layout: "centered",
+    layout: "padded",
   },
 } satisfies Meta<typeof CardDashboardStat6>;
 
