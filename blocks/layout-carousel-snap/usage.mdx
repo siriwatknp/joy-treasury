@@ -1,0 +1,43 @@
+import { Meta, Source } from "@storybook/blocks";
+import raw from "./src/LayoutCarouselSnap?raw";
+
+<Meta title="Layout/Carousel/Snap" />
+
+## CLI
+
+```sh
+npx joy-treasury@latest clone layout-carousel-snap
+```
+
+## How to use
+
+The `LayoutCarouselSnap` is a flexbox container that groups children into carousel using native CSS scroll-snap.
+
+```jsx
+import LayoutCarouselSnap from "./path/to/LayoutCarouselSnap";
+
+function App() {
+  return (
+    <LayoutCarouselSnap>
+      <div />
+      <div />
+      <div />
+      ...
+    </LayoutCarouselSnap>
+  );
+}
+```
+
+## Props
+
+### `enableScrollbar`
+
+If `true`, the scrollbar will be visible. Default is `false`.
+
+```ts
+enableScrollbar?: boolean
+```
+
+## LayoutCarouselSnap
+
+<Source code={raw} language="tsx" />
