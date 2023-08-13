@@ -1,0 +1,34 @@
+import { Meta, Source } from "@storybook/blocks";
+import raw from "./src/LayoutGridPosts2?raw";
+
+<Meta title="Layout/Grid/Posts2" />
+
+## CLI
+
+```sh
+npx joy-treasury@latest clone layout-grid-posts2
+```
+
+## How to use
+
+The `LayoutGridPosts2` accepts 5 children which gives priority to the first item. The children must be the same html tag.
+
+```jsx
+import LayoutGridPosts2 from "./path/to/LayoutGridPosts2";
+
+function App() {
+  return (
+    <LayoutGridPosts2>
+      <div />
+      <div />
+      <div />
+      <div />
+      <div />
+    </LayoutGridPosts2>
+  );
+}
+```
+
+## LayoutGridPosts2
+
+<Source code={raw} language="tsx" />
