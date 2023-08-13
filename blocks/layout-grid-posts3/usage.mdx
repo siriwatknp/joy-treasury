@@ -1,0 +1,37 @@
+import { Meta, Source } from "@storybook/blocks";
+import raw from "./src/LayoutGridPosts3?raw";
+
+<Meta title="Layout/Grid/Posts3" />
+
+## CLI
+
+```sh
+npx joy-treasury@latest clone layout-grid-posts3
+```
+
+## How to use
+
+The `LayoutGridPosts3` is a CSS Grid container that accepts 6 children.
+
+The first and last children should be horizontal layout, whereas the rest should be vertical layout.
+
+```jsx
+import LayoutGridPosts3 from "./path/to/LayoutGridPosts3";
+
+function App() {
+  return (
+    <LayoutGridPosts3>
+      <div className="horizontal" />
+      <div className="vertical" />
+      <div className="vertical" />
+      <div className="vertical" />
+      <div className="vertical" />
+      <div className="horizontal" />
+    </LayoutGridPosts3>
+  );
+}
+```
+
+## LayoutGridPosts3
+
+<Source code={raw} language="tsx" />

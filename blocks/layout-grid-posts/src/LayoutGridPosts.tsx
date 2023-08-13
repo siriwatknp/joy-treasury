@@ -13,7 +13,6 @@ export default function LayoutGridPosts({ sx, ...props }: BoxProps) {
             sm: "1fr 1fr",
             lg: "2fr minmax(400px, 1fr)",
           },
-          // gridTemplateRows: { sm: 'repeat(2, 1fr)',},
           gap: 2,
           "& > :first-child": {
             gridColumn: { sm: "1 / -1", lg: "span 1" },
