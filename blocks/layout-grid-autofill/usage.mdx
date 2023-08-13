@@ -1,0 +1,43 @@
+import { Meta, Source } from "@storybook/blocks";
+import raw from "./src/LayoutGridAutofill?raw";
+
+<Meta title="Layout/Grid/Autofill" />
+
+## CLI
+
+```sh
+npx joy-treasury@latest clone layout-grid-autofill
+```
+
+## How to use
+
+The `LayoutGridAutofill` is a CSS Grid container that automatically autofills the children.
+
+```jsx
+import LayoutGridAutofill from "./path/to/LayoutGridAutofill";
+
+function App() {
+  return (
+    <LayoutGridAutofill>
+      <div />
+      <div />
+      <div />
+      ...
+    </LayoutGridAutofill>
+  );
+}
+```
+
+## Props
+
+### `size`
+
+The grid item size.
+
+```ts
+size?: 'sm' | 'md' | 'lg'
+```
+
+## LayoutGridAutofill
+
+<Source code={raw} language="tsx" />
