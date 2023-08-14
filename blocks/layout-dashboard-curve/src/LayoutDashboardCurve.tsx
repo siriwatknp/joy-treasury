@@ -35,7 +35,7 @@ const toggleSidebar = () => {
   }
 };
 
-export function Page({ children }: React.PropsWithChildren<{}>) {
+export function Page({ children }: React.PropsWithChildren) {
   return (
     <Box
       sx={{
@@ -65,7 +65,7 @@ export function Page({ children }: React.PropsWithChildren<{}>) {
   );
 }
 
-export function Sidebar({ children }: React.PropsWithChildren<{}>) {
+export function Sidebar({ children }: React.PropsWithChildren) {
   return (
     <>
       <Box
@@ -120,7 +120,7 @@ export function Sidebar({ children }: React.PropsWithChildren<{}>) {
   );
 }
 
-export function Main({ children }: React.PropsWithChildren<{}>) {
+export function Main({ children }: React.PropsWithChildren) {
   return (
     <Box
       component="main"

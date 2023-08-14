@@ -8,13 +8,13 @@ export default function LayoutGridPosts({ sx, ...props }: BoxProps) {
       sx={[
         {
           display: "grid",
-          gridAutoRows: { xs: "clamp(256px, 40vh, 300px)" },
+          gridAutoRows: "minmax(min(40vh, 256px), auto)",
           gridTemplateColumns: {
             sm: "1fr 1fr",
             lg: "2fr minmax(400px, 1fr)",
           },
           gap: 2,
-          "& > :first-child": {
+          "& > :first-of-type": {
             gridColumn: { sm: "1 / -1", lg: "span 1" },
             gridRow: { lg: "span 2" },
           },

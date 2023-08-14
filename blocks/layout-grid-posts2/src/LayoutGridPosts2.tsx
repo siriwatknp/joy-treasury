@@ -9,7 +9,7 @@ export default function LayoutGridPosts2({ sx, ...props }: BoxProps) {
         {
           display: "grid",
           gridTemplateColumns: { xs: "1fr 1fr", md: "1fr 0.5fr 0.5fr" },
-          gridAutoRows: "clamp(256px, 40vh, 300px)",
+          gridAutoRows: "minmax(min(40vh, 256px), auto)",
           gap: { xs: 2, md: 3 },
           "& > :first-child": {
             gridColumn: { xs: "span 2", md: "span 1" },
