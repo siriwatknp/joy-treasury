@@ -29,9 +29,13 @@ const config: StorybookConfig = {
             rule &&
             String(rule.test) === String(/\.(mjs|tsx?|jsx?)$/)
           ) {
-            rule = { ...rule, resourceQuery: { not: [/raw/] } };
+            rule = {
+              ...rule,
+              resourceQuery: {
+                not: [/raw/],
+              },
+            };
           }
-
           return rule;
         }),
       ];
@@ -39,5 +43,4 @@ const config: StorybookConfig = {
     return config;
   },
 };
-
 export default config;
