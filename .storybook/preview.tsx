@@ -113,7 +113,7 @@ const preview: Preview = {
             sx={{
               p: 1,
               position: "fixed",
-              zIndex: 9999,
+              zIndex: 99999,
               bottom: 8,
               left: "4rem",
               transform: hidden ? "translateY(200%)" : undefined,
