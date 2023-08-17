@@ -11,7 +11,6 @@ import { CssVarsProvider, useColorScheme } from "@mui/joy/styles";
 import SvgIcon from "@mui/joy/SvgIcon";
 import Tooltip from "@mui/joy/Tooltip";
 import { linkTo } from "@storybook/addon-links";
-import { CodeOrSourceMdx, Title } from "@storybook/blocks";
 import { useDarkMode } from "storybook-dark-mode";
 import { useCopyToClipboard } from "usehooks-ts";
 import "./global.css";
@@ -40,16 +39,6 @@ const preview: Preview = {
       hideNoControlsWarning: true,
       expanded: false,
     },
-    docs: {
-      page: () => {
-        return (
-          <>
-            <Title>CLI</Title>
-            <CodeOrSourceMdx />
-          </>
-        );
-      },
-    },
   },
   decorators: [
     (Story) => {
@@ -62,6 +51,7 @@ const preview: Preview = {
       );
     },
     (Story, context) => {
+      console.log("context", context);
       const [hidden, setHidden] = React.useState(
         () => localStorage.getItem("cli-hidden") === "true"
       );
@@ -92,9 +82,10 @@ const preview: Preview = {
                 minHeight: 24,
                 position: "fixed",
                 zIndex: 9999,
-                bottom: hidden ? 8 : 52,
-                left: "1rem",
+                bottom: hidden ? "1.25rem" : "1.5rem",
+                left: "4rem",
                 borderRadius: "md",
+                pb: hidden ? 0 : "2rem",
               }}
             >
               <SvgIcon
@@ -123,9 +114,9 @@ const preview: Preview = {
               position: "fixed",
               zIndex: 9999,
               bottom: 8,
-              left: 0,
+              left: "4rem",
               transform: hidden ? "translateY(200%)" : undefined,
-              borderRadius: "0 40px 40px 0",
+              borderRadius: 40,
               display: "flex",
               alignItems: "center",
               gap: 1,
@@ -217,7 +208,7 @@ const preview: Preview = {
                     try {
                       await copy(
                         `npx joy-treasury@latest clone ${blocks
-                          .map((block) => block.id.replace(/--.*/, ""))
+                          .map((block) => block.id.replace(/--/, "-"))
                           .join(" ")}`
                       );
                       setCopied(true);
@@ -291,7 +282,7 @@ const preview: Preview = {
                 }
               >
                 <Tooltip describeChild title="Goto block">
-                  <span>{block.id.replace(/--.*/, "")}</span>
+                  <span>{block.id.replace(/--/, "-")}</span>
                 </Tooltip>
               </Chip>
             ))}
