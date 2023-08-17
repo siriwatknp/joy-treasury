@@ -19,9 +19,7 @@ function Widget({
   return (
     <Card size="lg" variant="outlined" orientation="horizontal">
       <CardContent>
-        <Typography level="title-sm" sx={{ mb: 1 }}>
-          {title}
-        </Typography>
+        <Typography level="title-sm">{title}</Typography>
         <Typography level="h2">{value}</Typography>
         <Typography level="body-xs">{metadata}</Typography>
       </CardContent>

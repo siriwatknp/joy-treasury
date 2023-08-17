@@ -79,7 +79,7 @@ export default function CardCoverStream() {
             <Typography level="body-sm" textColor="text.primary">
               Disney+ Hotstar
             </Typography>
-            <Typography level="body-xs" lineHeight="xs">
+            <Typography level="body-xs">
               Global & local movies & series
             </Typography>
           </Box>

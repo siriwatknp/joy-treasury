@@ -69,6 +69,7 @@ const preview: Preview = {
             size="sm"
             placement="right-start"
             title={!hidden ? "Hide" : "Show toolbar"}
+            sx={{ zIndex: 99999 }}
           >
             <IconButton
               variant="soft"
@@ -81,7 +82,7 @@ const preview: Preview = {
               sx={{
                 minHeight: 24,
                 position: "fixed",
-                zIndex: 9999,
+                zIndex: 99999,
                 bottom: hidden ? "1.25rem" : "1.5rem",
                 left: "4rem",
                 borderRadius: "md",

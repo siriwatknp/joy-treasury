@@ -71,7 +71,7 @@ export function Sidebar({ children }: React.PropsWithChildren) {
       <Box
         sx={{
           position: "fixed",
-          zIndex: 9998,
+          zIndex: (theme) => theme.vars.zIndex.modal,
           top: 0,
           left: 0,
           width: "100vw",
@@ -102,7 +102,7 @@ export function Sidebar({ children }: React.PropsWithChildren) {
             md: "none",
           },
           transition: "transform 0.2s",
-          zIndex: 10000,
+          zIndex: (theme) => theme.vars.zIndex.modal,
           height: "100dvh",
           width: "var(--Sidebar-width)",
           top: 0,

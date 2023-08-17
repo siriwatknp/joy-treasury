@@ -38,7 +38,12 @@ export default function storyDialog(Component: React.ComponentType) {
     return (
       <>
         <Story />
-        <Tooltip size="sm" title="Show source code" placement="top-start">
+        <Tooltip
+          size="sm"
+          title="Show source code"
+          placement="top-start"
+          sx={{ zIndex: 100000 }}
+        >
           <IconButton
             size="lg"
             variant="soft"
@@ -46,7 +51,7 @@ export default function storyDialog(Component: React.ComponentType) {
               position: "fixed",
               bottom: "0.5rem",
               left: "0.5rem",
-              zIndex: 9999,
+              zIndex: 99999,
               borderRadius: 40,
             }}
             onClick={() => setOpen(true)}

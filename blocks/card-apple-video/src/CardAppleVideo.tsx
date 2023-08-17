@@ -30,12 +30,7 @@ export default function CardAppleVideo() {
         <Typography level="title-sm" textColor="neutral.500">
           GET CREATIVE
         </Typography>
-        <Typography
-          level="h3"
-          fontWeight="xl"
-          lineHeight="xs"
-          sx={{ textWrap: "balance" }}
-        >
+        <Typography level="h3" fontWeight="xl" sx={{ textWrap: "balance" }}>
           Make videos with your family
         </Typography>
         <Typography level="body-sm">

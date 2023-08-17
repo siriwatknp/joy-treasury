@@ -24,10 +24,8 @@ export default function CarouselAppleGames() {
           <Typography color="primary" level="body-xs">
             HAPPENING NOW
           </Typography>
-          <Typography level="body-lg" lineHeight="xs">
-            Pokémon GO
-          </Typography>
-          <Typography level="body-lg" lineHeight="xs" textColor="text.icon">
+          <Typography level="body-lg">Pokémon GO</Typography>
+          <Typography level="body-lg" textColor="text.icon">
             Catch Froakie this Community Day
           </Typography>
 
@@ -54,12 +52,12 @@ export default function CarouselAppleGames() {
               sx={{ flex: "initial", mt: "auto", alignItems: "center" }}
             >
               <Avatar src="https://lh3.googleusercontent.com/Uzo_GQXZXc1Nsj7OY3dbfRDam0TjTzV4A1dhgSYLzkdrygVRDZgDMv7JME4kEAkS0UFa0MdJevzXynIlc7X6yXRSEV2-XkrRpX1QzJts9-a6=e365-s0" />
-              <CardContent>
+              <div>
                 <Typography level="title-md">Pokémon GO</Typography>
                 <Typography level="body-xs">
                   Epic AR adventure & online RPG
                 </Typography>
-              </CardContent>
+              </div>
               <Box sx={{ display: "flex", flexDirection: "column", gap: 0.5 }}>
                 <Button
                   size="sm"
@@ -74,7 +72,9 @@ export default function CarouselAppleGames() {
                 >
                   GET
                 </Button>
-                <Typography fontSize="0.625rem">In-App Purchases</Typography>
+                <Typography fontSize="0.625rem" noWrap>
+                  In-App Purchases
+                </Typography>
               </Box>
             </CardContent>
           </Card>

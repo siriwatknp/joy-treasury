@@ -18,9 +18,7 @@ export default function CardAppleEssentials() {
         <Typography level="title-sm" textColor="text.icon">
           ESSENTIALS
         </Typography>
-        <Typography level="h3" lineHeight="xs">
-          Social networking 101
-        </Typography>
+        <Typography level="h3">Social networking 101</Typography>
       </div>
       <CardContent>
         <List

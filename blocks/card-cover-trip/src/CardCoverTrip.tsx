@@ -25,7 +25,7 @@ export default function CardCoverTrip() {
             "linear-gradient(to top, rgba(0 0 0 / 0.8), rgba(0 0 0 / 0) 160px)",
         }}
       />
-      <CardContent sx={{ justifyContent: "flex-end", gap: 1 }}>
+      <CardContent sx={{ justifyContent: "flex-end" }}>
         <SvgIcon fontSize="xl3">
           <svg
             width="512"
@@ -39,23 +39,21 @@ export default function CardCoverTrip() {
             />
           </svg>
         </SvgIcon>
-        <div>
-          <Typography level="h2">
-            <Link
-              textColor="inherit"
-              underline="none"
-              overlay
-              href="#" // 👈 TODO: link to another page here.
-              sx={{
-                "--joy-palette-focusVisible": (theme) =>
-                  theme.vars.palette.primary[500],
-              }}
-            >
-              Iceland
-            </Link>
-          </Typography>
-          <Typography level="body-sm">Winter 2020 • 8 days</Typography>
-        </div>
+        <Typography level="h2">
+          <Link
+            textColor="inherit"
+            underline="none"
+            overlay
+            href="#" // 👈 TODO: link to another page here.
+            sx={{
+              "--joy-palette-focusVisible": (theme) =>
+                theme.vars.palette.primary[500],
+            }}
+          >
+            Iceland
+          </Link>
+        </Typography>
+        <Typography level="body-sm">Winter 2020 • 8 days</Typography>
       </CardContent>
     </Card>
   );

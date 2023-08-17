@@ -3,6 +3,7 @@ import AspectRatio from "@mui/joy/AspectRatio";
 import Card from "@mui/joy/Card";
 import CardContent from "@mui/joy/CardContent";
 import CardOverflow from "@mui/joy/CardOverflow";
+import Divider from "@mui/joy/Divider";
 import IconButton from "@mui/joy/IconButton";
 import SvgIcon from "@mui/joy/SvgIcon";
 import Typography from "@mui/joy/Typography";
@@ -10,66 +11,65 @@ import Typography from "@mui/joy/Typography";
 export default function CardDashboardCompany() {
   return (
     <Card sx={{ borderRadius: "xs" }}>
-      <CardOverflow
-        sx={{
-          display: "flex",
-          alignItems: "center",
-          borderBottom: "1px solid",
-          borderColor: "divider",
-        }}
-      >
-        <AspectRatio
-          variant="solid"
-          color="danger"
-          ratio="1"
-          sx={{
-            m: 0,
-            width: 48,
-            borderRadius: "50%",
-            transform: "translateY(50%)",
-          }}
+      <CardOverflow>
+        <CardContent
+          orientation="horizontal"
+          sx={{ alignItems: "center", py: 0 }}
         >
-          <div>
+          <AspectRatio
+            variant="solid"
+            color="danger"
+            ratio="1"
+            sx={{
+              m: 0,
+              width: 48,
+              borderRadius: "50%",
+              transform: "translateY(50%)",
+            }}
+          >
+            <div>
+              <SvgIcon>
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  strokeWidth={2}
+                  stroke="currentColor"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    d="M12 21v-8.25M15.75 21v-8.25M8.25 21v-8.25M3 9l9-6 9 6m-1.5 12V10.332A48.36 48.36 0 0012 9.75c-2.551 0-5.056.2-7.5.582V21M3 21h18M12 6.75h.008v.008H12V6.75z"
+                  />
+                </svg>
+              </SvgIcon>
+            </div>
+          </AspectRatio>
+          <IconButton
+            variant="plain"
+            color="neutral"
+            sx={{ ml: "auto", mr: -1, borderRadius: "50%" }}
+          >
             <SvgIcon>
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 fill="none"
                 viewBox="0 0 24 24"
-                strokeWidth={2}
+                strokeWidth={1.5}
                 stroke="currentColor"
               >
                 <path
                   strokeLinecap="round"
                   strokeLinejoin="round"
-                  d="M12 21v-8.25M15.75 21v-8.25M8.25 21v-8.25M3 9l9-6 9 6m-1.5 12V10.332A48.36 48.36 0 0012 9.75c-2.551 0-5.056.2-7.5.582V21M3 21h18M12 6.75h.008v.008H12V6.75z"
+                  d="M6.75 12a.75.75 0 11-1.5 0 .75.75 0 011.5 0zM12.75 12a.75.75 0 11-1.5 0 .75.75 0 011.5 0zM18.75 12a.75.75 0 11-1.5 0 .75.75 0 011.5 0z"
                 />
               </svg>
             </SvgIcon>
-          </div>
-        </AspectRatio>
-        <IconButton
-          variant="plain"
-          color="neutral"
-          sx={{ ml: "auto", mr: -1, borderRadius: "50%" }}
-        >
-          <SvgIcon>
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              fill="none"
-              viewBox="0 0 24 24"
-              strokeWidth={1.5}
-              stroke="currentColor"
-            >
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                d="M6.75 12a.75.75 0 11-1.5 0 .75.75 0 011.5 0zM12.75 12a.75.75 0 11-1.5 0 .75.75 0 011.5 0zM18.75 12a.75.75 0 11-1.5 0 .75.75 0 011.5 0z"
-              />
-            </svg>
-          </SvgIcon>
-        </IconButton>
+          </IconButton>
+        </CardContent>
+        <Divider inset="context" />
       </CardOverflow>
-      <CardContent sx={{ mt: "24px" }}>
+      <CardContent sx={{ mt: 3 }}>
         <Typography level="body-sm" textColor="text.icon">
           Thailand
         </Typography>

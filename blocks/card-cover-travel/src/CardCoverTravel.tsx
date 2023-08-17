@@ -1,10 +1,7 @@
 import React from "react";
-import Button from "@mui/joy/Button";
 import Card from "@mui/joy/Card";
-import CardActions from "@mui/joy/CardActions/CardActions";
 import CardContent from "@mui/joy/CardContent";
 import CardCover from "@mui/joy/CardCover";
-import CardOverflow from "@mui/joy/CardOverflow/CardOverflow";
 import Chip from "@mui/joy/Chip";
 import IconButton from "@mui/joy/IconButton/IconButton";
 import Link from "@mui/joy/Link";
@@ -28,7 +25,7 @@ export default function CardCoverTravel() {
             "linear-gradient(to top, rgba(0 0 0 / 0.8), rgba(0 0 0 / 0) 200px)",
         }}
       />
-      <CardContent sx={{ justifyContent: "flex-end", gap: 1 }}>
+      <CardContent sx={{ justifyContent: "flex-end" }}>
         <Chip
           size="sm"
           variant="soft"
