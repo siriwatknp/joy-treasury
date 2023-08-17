@@ -1,5 +1,7 @@
 import React from "react";
 import type { Meta, StoryObj } from "@storybook/react";
+import storyDialog from "../../../.storybook/decorators/storyDialog";
+import Usage from "../usage.mdx";
 import ListFeaturedCity from "./ListFeaturedCity";
 
 const meta = {
@@ -9,6 +11,7 @@ const meta = {
     layout: "centered",
   },
   decorators: [
+    storyDialog(Usage),
     (Story) => (
       <React.Fragment>
         <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -30,7 +33,7 @@ const meta = {
 export default meta;
 type Story = StoryObj<typeof meta>;
 
-export const Block: Story = {
+export const City: Story = {
   render: () => (
     <div style={{ width: 425, maxWidth: "100%" }}>
       <ListFeaturedCity />

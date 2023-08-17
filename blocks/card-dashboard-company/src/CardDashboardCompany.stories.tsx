@@ -1,5 +1,7 @@
 import React from "react";
 import type { Meta, StoryObj } from "@storybook/react";
+import storyDialog from "../../../.storybook/decorators/storyDialog";
+import Usage from "../usage.mdx";
 import CardDashboardCompany from "./CardDashboardCompany";
 
 const meta = {
@@ -8,12 +10,13 @@ const meta = {
   parameters: {
     layout: "centered",
   },
+  decorators: [storyDialog(Usage)],
 } satisfies Meta<typeof CardDashboardCompany>;
 
 export default meta;
 type Story = StoryObj<typeof meta>;
 
-export const Block: Story = {
+export const Company: Story = {
   render: () => (
     <div
       style={{

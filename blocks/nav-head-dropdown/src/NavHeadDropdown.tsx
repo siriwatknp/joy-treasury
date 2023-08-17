@@ -27,7 +27,7 @@ export default function NavHeadDropdown() {
       if (!inRef.current) {
         setOpen(false);
       }
-    }, 400);
+    }, 200);
   };
 
   return (

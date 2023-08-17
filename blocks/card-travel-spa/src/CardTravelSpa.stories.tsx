@@ -1,5 +1,7 @@
 import React from "react";
 import type { Meta, StoryObj } from "@storybook/react";
+import storyDialog from "../../../.storybook/decorators/storyDialog";
+import Usage from "../usage.mdx";
 import CardTravelSpa from "./CardTravelSpa";
 import CardTravelSpaCover from "./CardTravelSpaCover";
 
@@ -11,6 +13,7 @@ const meta = {
     layout: "centered",
   },
   decorators: [
+    storyDialog(Usage),
     (Story) => (
       <React.Fragment>
         <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -33,7 +36,7 @@ export default meta;
 type Story = StoryObj<typeof meta>;
 
 // More on writing stories with args: https://storybook.js.org/docs/react/writing-stories/args
-export const Block: Story = {
+export const Spa: Story = {
   render: () => (
     <div
       style={{
@@ -49,7 +52,7 @@ export const Block: Story = {
   ),
 };
 
-export const Block2: Story = {
+export const SpaCover: Story = {
   render: () => (
     <div
       style={{

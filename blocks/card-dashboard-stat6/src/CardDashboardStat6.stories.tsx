@@ -1,5 +1,7 @@
 import React from "react";
 import type { Meta, StoryObj } from "@storybook/react";
+import storyDialog from "../../../.storybook/decorators/storyDialog";
+import Usage from "../usage.mdx";
 import CardDashboardStat6 from "./CardDashboardStat6";
 
 const meta = {
@@ -8,11 +10,12 @@ const meta = {
   parameters: {
     layout: "padded",
   },
+  decorators: [storyDialog(Usage)],
 } satisfies Meta<typeof CardDashboardStat6>;
 
 export default meta;
 type Story = StoryObj<typeof meta>;
 
-export const Block: Story = {
+export const Stat6: Story = {
   render: () => <CardDashboardStat6 />,
 };

@@ -1,5 +1,7 @@
 import React from "react";
 import type { Meta, StoryObj } from "@storybook/react";
+import storyDialog from "../../../.storybook/decorators/storyDialog";
+import Usage from "../usage.mdx";
 import LayoutCarouselSnap from "./LayoutCarouselSnap";
 
 const meta = {
@@ -8,12 +10,13 @@ const meta = {
   parameters: {
     layout: "padded",
   },
+  decorators: [storyDialog(Usage)],
 } satisfies Meta<typeof LayoutCarouselSnap>;
 
 export default meta;
 type Story = StoryObj<typeof meta>;
 
-export const Block: Story = {
+export const Snap: Story = {
   render: () => (
     <LayoutCarouselSnap>
       {[...new Array(10)].map((_, index) => (

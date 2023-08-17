@@ -1,5 +1,7 @@
 import React from "react";
 import type { Meta, StoryObj } from "@storybook/react";
+import storyDialog from "../../../.storybook/decorators/storyDialog";
+import Usage from "../usage.mdx";
 import LayoutDashboardCurve from "./LayoutDashboardCurve";
 
 const meta = {
@@ -8,11 +10,12 @@ const meta = {
   parameters: {
     layout: "fullscreen",
   },
+  decorators: [storyDialog(Usage)],
 } satisfies Meta<typeof LayoutDashboardCurve>;
 
 export default meta;
 type Story = StoryObj<typeof meta>;
 
-export const Block: Story = {
+export const Curve: Story = {
   render: () => <LayoutDashboardCurve />,
 };

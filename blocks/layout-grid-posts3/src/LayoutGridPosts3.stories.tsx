@@ -1,10 +1,7 @@
 import React from "react";
 import type { Meta, StoryObj } from "@storybook/react";
-import AspectRatio from "@mui/joy/AspectRatio";
-import Box from "@mui/joy/Box";
-import Card from "@mui/joy/Card";
-import CardContent from "@mui/joy/CardContent";
-import CardOverflow from "@mui/joy/CardOverflow";
+import storyDialog from "../../../.storybook/decorators/storyDialog";
+import Usage from "../usage.mdx";
 import LayoutGridPosts3 from "./LayoutGridPosts3";
 
 const meta = {
@@ -13,12 +10,13 @@ const meta = {
   parameters: {
     layout: "padded",
   },
+  decorators: [storyDialog(Usage)],
 } satisfies Meta<typeof LayoutGridPosts3>;
 
 export default meta;
 type Story = StoryObj<typeof meta>;
 
-export const Block: Story = {
+export const Posts3: Story = {
   render: () => (
     <LayoutGridPosts3>
       {[...Array(6)].map((_, i) => (

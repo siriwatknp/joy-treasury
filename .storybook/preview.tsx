@@ -208,7 +208,7 @@ const preview: Preview = {
                     try {
                       await copy(
                         `npx joy-treasury@latest clone ${blocks
-                          .map((block) => block.id.replace(/--/, "-"))
+                          .map((block) => block.id.replace(/--.*/, ""))
                           .join(" ")}`
                       );
                       setCopied(true);
@@ -282,7 +282,7 @@ const preview: Preview = {
                 }
               >
                 <Tooltip describeChild title="Goto block">
-                  <span>{block.id.replace(/--/, "-")}</span>
+                  <span>{block.id.replace(/--.*/, "")}</span>
                 </Tooltip>
               </Chip>
             ))}
