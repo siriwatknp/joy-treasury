@@ -4,7 +4,8 @@ unless_exists: true
 ---
 import React from "react";
 import type { Meta, StoryObj } from "@storybook/react";
-
+import storyDialog from "../../../.storybook/decorators/storyDialog";
+import Usage from "../usage.mdx";
 import <%=h.toName(name)%> from "./<%=h.toName(name)%>";
 
 const meta = {
@@ -13,12 +14,13 @@ const meta = {
   parameters: {
     layout: "centered",
   },
+  decorators: [storyDialog(Usage)],
 } satisfies Meta<typeof <%=h.toName(name)%>>;
 
 export default meta;
 type Story = StoryObj<typeof meta>;
 
-export const Block: Story = {
+export const <%=h.getThirdPascal(name)%>: Story = {
   render: () => (
     <div 
       style={{
