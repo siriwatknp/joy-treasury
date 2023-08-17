@@ -2,12 +2,12 @@
   max-height: 300px;
 }
 
-pre > .docblock-source > div:has(button:only-child) {
+.docblock-source > div:has(button:only-child) {
   bottom: initial;
   top: 0;
 }
 
-pre > .docblock-source > div > button:only-child {
+.docblock-source > div > button:only-child {
   border-radius: 0 0 0 4px;
   border-top: unset;
   border-bottom: 1px solid hsla(203, 50%, 30%, 0.15);
