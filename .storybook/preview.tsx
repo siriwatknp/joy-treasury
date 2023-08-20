@@ -1,20 +1,11 @@
 import React from "react";
 import type { Preview } from "@storybook/react";
-import Button from "@mui/joy/Button";
-import Chip from "@mui/joy/Chip";
-import ChipDelete from "@mui/joy/ChipDelete";
 import CssBaseline from "@mui/joy/CssBaseline";
-import Divider from "@mui/joy/Divider";
-import IconButton from "@mui/joy/IconButton";
-import Sheet from "@mui/joy/Sheet";
 import { CssVarsProvider, useColorScheme } from "@mui/joy/styles";
-import SvgIcon from "@mui/joy/SvgIcon";
-import Tooltip from "@mui/joy/Tooltip";
-import { linkTo } from "@storybook/addon-links";
 import { useDarkMode } from "storybook-dark-mode";
-import { useCopyToClipboard } from "usehooks-ts";
 import "./global.css";
 import cliToolbar from "./decorators/cliToolbar";
+import draggableIframe from "./decorators/draggableIframe";
 
 const ModeObserver = () => {
   const isDark = useDarkMode();
@@ -52,6 +43,7 @@ const preview: Preview = {
       );
     },
     cliToolbar(),
+    draggableIframe(),
   ],
 };
 
