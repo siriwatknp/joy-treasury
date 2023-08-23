@@ -18,6 +18,9 @@ const config: StorybookConfig = {
   docs: {
     autodocs: "tag",
   },
+  typescript: {
+    reactDocgen: false,
+  },
   async webpackFinal(config, { configType }) {
     if (config.module) {
       config.module.rules = [
