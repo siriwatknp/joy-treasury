@@ -1,0 +1,51 @@
+import { Meta, Source } from "@storybook/blocks";
+import raw from "./src/LayoutScrollShadow?raw";
+
+<Meta title="Layout/Scroll/Shadow" />
+
+## CLI
+
+```sh
+npx joy-treasury@latest clone layout-scroll-shadow
+```
+
+## How to use
+
+### Orientation
+
+By default, the shadow is displayed for vertical scrolling:
+
+```js
+<LayoutScrollShadow>...long content</LayoutScrollShadow>
+```
+
+Set `orientation="horizontal"` if you want to display the shadow for horizontal scrolling:
+
+```js
+<LayoutScrollShadow orientation="horizontal" sx={{ display: "flex" }}>
+  ...long content
+</LayoutScrollShadow>
+```
+
+### Background
+
+To set the background of the scroller to match the container, use `sx` prop to target CSS variable `--layout-background`:
+
+```js
+<LayoutScrollShadow
+  sx={{
+    "--layout-background": (theme) => theme.vars.palette.background.surface,
+  }}
+>
+  ...long content
+</LayoutScrollShadow>
+```
+
+## Note
+
+The shadow uses CSS background property, so it works only for the content without background.
+Otherwise, the content's background will cover the shadow.
+
+## LayoutScrollShadow
+
+<Source code={raw} language="tsx" />
