@@ -24,9 +24,26 @@ const Curves = ({ imgUrl, orientation }: Props) => {
         borderRadius: "10px",
       }}
     >
-      <svg viewBox="0 0 23.25 10" style={{ borderRadius: "10px" }}>
-        <path d="M 15 -16.34 C 13.21 8.06, 20 18, -16.73 -5" />
-        <path d="M 50 25 C 13.1 -20.35, -5.17 10.46, 50 45" />
+      <svg
+        width="100%"
+        height="100%"
+        viewBox="0 0 23.25 10"
+        style={{ borderRadius: "10px" }}
+      >
+        <defs>
+          <mask id="mask" x="0" y="0" width="100%" height="100%">
+            <path d="M 15 -16.34 C 13.21 8.06, 20 18, -16.73 -5" fill="white" />
+            <path d="M 50 25 C 13.1 -20.35, -5.17 10.46, 50 45" fill="white" />
+          </mask>
+        </defs>
+        <image
+          href={imgUrl}
+          x="0"
+          y="0"
+          width="100%"
+          height="100%"
+          mask="url(#mask)"
+        />
       </svg>
     </Box>
   );
