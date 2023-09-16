@@ -45,11 +45,10 @@ export default function storyDialog(Component: React.ComponentType) {
           sx={{ zIndex: 100000 }}
         >
           <IconButton
-            size="lg"
             variant="soft"
             sx={{
               position: "fixed",
-              bottom: "0.5rem",
+              bottom: "1rem",
               left: "0.5rem",
               zIndex: 99999,
               borderRadius: 40,
