@@ -1,4 +1,5 @@
 import * as React from "react";
+import AspectRatio from "@mui/joy/AspectRatio";
 import Box from "@mui/joy/Box";
 import Button from "@mui/joy/Button";
 import Card from "@mui/joy/Card";
@@ -13,23 +14,20 @@ interface Props {
   orientation?: Orientation;
 }
 
-const Curves = ({ imgUrl, orientation }: Props) => {
+const Curves = ({
+  imgUrl,
+  orientation,
+  children,
+}: React.PropsWithChildren<Props>) => {
   return (
-    <Box
+    <AspectRatio
+      ratio="437/188"
       sx={{
-        width: "100%",
-        height: "125px",
         transform: `scalex(${orientation === "left" ? 1 : -1})`,
         background: `linear-gradient(270deg, rgba(255,245,222,1) 0%, rgba(251,231,232,1) 30%, rgba(205,195,255,1) 76%, rgba(206,196,254,1) 100%)`,
-        borderRadius: "10px",
       }}
     >
-      <svg
-        width="100%"
-        height="100%"
-        viewBox="0 0 23.25 10"
-        style={{ borderRadius: "10px" }}
-      >
+      <svg width="100%" height="100%" viewBox="0 0 23.25 10">
         <defs>
           <mask id="mask" x="0" y="0" width="100%" height="100%">
             <path d="M 15 -16.34 C 13.21 8.06, 20 18, -16.73 -5" fill="white" />
@@ -46,7 +44,8 @@ const Curves = ({ imgUrl, orientation }: Props) => {
           preserveAspectRatio="xMidYMid slice"
         />
       </svg>
-    </Box>
+      {children}
+    </AspectRatio>
   );
 };
 
@@ -64,8 +63,13 @@ const CardPricingPlan2 = ({
         level="body-md"
         sx={{
           position: "absolute",
-          left: 24,
-          top: orientation === "left" ? 20 : 50,
+          top: 20,
+          ...(orientation === "left" && {
+            left: 24,
+          }),
+          ...(orientation === "right" && {
+            right: 20,
+          }),
           color: "white",
         }}
       >
@@ -75,8 +79,13 @@ const CardPricingPlan2 = ({
         level="h2"
         sx={{
           position: "absolute",
-          left: 24,
-          top: orientation === "left" ? 35 : 65,
+          top: 35,
+          ...(orientation === "left" && {
+            left: 24,
+          }),
+          ...(orientation === "right" && {
+            right: 24,
+          }),
           color: "white",
         }}
       >
@@ -100,11 +109,17 @@ const CardPricingPlan2 = ({
           10 GB Storage space
         </Typography>
         <Typography
+          level="body-xs"
           component="div"
-          fontSize="8px"
-          fontWeight="sm"
           textColor="common.black"
-          sx={{ border: 0.5, borderRadius: "xl", p: 1, pl: 2, pr: 2 }}
+          sx={{
+            border: 0.5,
+            borderRadius: "xl",
+            p: 1,
+            pl: 2,
+            pr: 2,
+            fontSize: "10px",
+          }}
         >
           We accept both, fiat and crypto
         </Typography>
@@ -120,14 +135,12 @@ const CardPricingPlan2 = ({
       </CardContent>
       <CardActions>
         <Button
+          variant="soft"
+          color="neutral"
           sx={{
-            borderRadius: "xl",
-            borderTopLeftRadius: "10px",
-            borderTopRightRadius: "10px",
             fontSize: "10px",
             fontWeight: "lg",
-            bgcolor: "lightgrey",
-            color: "common.black",
+            color: "text.primary",
           }}
         >
           1 month subscription
@@ -137,12 +150,4 @@ const CardPricingPlan2 = ({
   );
 };
 
-export default function Props() {
-  const imgUrl =
-    "https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1964&q=80";
-  return (
-    <Box sx={{ display: "flex", flexDirection: "row", gap: 1 }}>
-      <CardPricingPlan2 imgUrl={imgUrl} orientation="left" />
-    </Box>
-  );
-}
+export default CardPricingPlan2;
