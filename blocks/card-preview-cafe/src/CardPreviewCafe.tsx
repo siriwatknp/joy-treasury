@@ -4,11 +4,13 @@ import CircleIcon from "@mui/icons-material/Circle";
 import KeyboardArrowRightIcon from "@mui/icons-material/KeyboardArrowRight";
 import LocationOnIcon from "@mui/icons-material/LocationOn";
 import StarIcon from "@mui/icons-material/Star";
+import AspectRatio from "@mui/joy/AspectRatio";
 import Box from "@mui/joy/Box";
 import Button from "@mui/joy/Button";
 import Card from "@mui/joy/Card";
 import CardActions from "@mui/joy/CardActions";
 import CardContent from "@mui/joy/CardContent";
+import CardOverflow from "@mui/joy/CardOverflow";
 import Stack from "@mui/joy/Stack";
 import Typography from "@mui/joy/Typography";
 
@@ -20,25 +22,32 @@ export default function CardReviewCafe() {
       <Typography textColor="#000" fontWeight="lg">
         Cafe Terbaru
       </Typography>
-      <CardContent orientation="horizontal" sx={{ width: "100%", gap: 2 }}>
-        <img
-          src={imgUrl}
-          alt=""
-          width="150"
-          height="150"
-          style={{ borderRadius: "10%" }}
-        />
+      <CardContent
+        orientation="horizontal"
+        sx={{ width: "100%", gap: 2, mt: 1 }}
+      >
+        <CardOverflow>
+          <AspectRatio ratio="1" sx={{ width: 150 }}>
+            <img src={imgUrl} alt="" loading="lazy" />
+          </AspectRatio>
+        </CardOverflow>
         <Stack justifyContent="space-between" sx={{ width: "100%" }}>
           <Stack direction="row" justifyContent="space-between">
             <Typography
+              level="body-sm"
               textColor="#000"
-              startDecorator={<LocationOnIcon size="sm" color="inherit" />}
+              startDecorator={
+                <LocationOnIcon color="inherit" sx={{ fontSize: 16 }} />
+              }
             >
               1.2km
             </Typography>
             <Typography
+              level="body-sm"
               textColor="#000"
-              startDecorator={<StarIcon size="sm" color="warning" />}
+              startDecorator={
+                <StarIcon color="warning" sx={{ fontSize: 16 }} />
+              }
               sx={{ mr: 3 }}
             >
               4.8
