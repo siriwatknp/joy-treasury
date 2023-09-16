@@ -18,9 +18,9 @@ type Story = StoryObj<typeof meta>;
 
 export const Cafe: Story = {
   render: () => (
-    <div 
+    <div
       style={{
-        width: 340,
+        width: 500,
         padding: 20,
         maxWidth: "100%",
         resize: "horizontal",
@@ -31,5 +31,3 @@ export const Cafe: Story = {
     </div>
   ),
 };
-
-
