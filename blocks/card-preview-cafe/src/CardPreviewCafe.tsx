@@ -10,7 +10,6 @@ import Button from "@mui/joy/Button";
 import Card from "@mui/joy/Card";
 import CardActions from "@mui/joy/CardActions";
 import CardContent from "@mui/joy/CardContent";
-import CardOverflow from "@mui/joy/CardOverflow";
 import Stack from "@mui/joy/Stack";
 import Typography from "@mui/joy/Typography";
 
@@ -26,11 +25,9 @@ export default function CardReviewCafe() {
         orientation="horizontal"
         sx={{ width: "100%", gap: 2, mt: 1 }}
       >
-        <CardOverflow>
-          <AspectRatio ratio="1" sx={{ width: 150 }}>
-            <img src={imgUrl} alt="" loading="lazy" />
-          </AspectRatio>
-        </CardOverflow>
+        <AspectRatio ratio="1" sx={{ minWidth: 150 }}>
+          <img src={imgUrl} alt="" loading="lazy" />
+        </AspectRatio>
         <Stack justifyContent="space-between" sx={{ width: "100%" }}>
           <Stack direction="row" justifyContent="space-between">
             <Typography
