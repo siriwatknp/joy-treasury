@@ -55,7 +55,7 @@ const CardPricingPlan2 = ({
 }: Props) => {
   return (
     <Card
-      variant="soft"
+      variant="plain"
       sx={{ borderRadius: "xl", p: 0.5, bgcolor: "white", minWidth: 300 }}
     >
       <Curves imgUrl={imgUrl} orientation={orientation} />
