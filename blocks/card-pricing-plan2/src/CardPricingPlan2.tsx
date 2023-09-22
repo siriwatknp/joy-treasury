@@ -21,6 +21,7 @@ const Curves = ({
 }: React.PropsWithChildren<Props>) => {
   return (
     <AspectRatio
+      variant="plain"
       ratio="437/188"
       sx={{
         transform: `scalex(${orientation === "left" ? 1 : -1})`,
@@ -56,7 +57,13 @@ const CardPricingPlan2 = ({
   return (
     <Card
       variant="plain"
-      sx={{ borderRadius: "xl", p: 0.5, bgcolor: "white", minWidth: 300 }}
+      sx={{
+        borderRadius: "xl",
+        p: 0.5,
+        bgcolor: "white",
+        minWidth: 300,
+        boxShadow: "lg",
+      }}
     >
       <Curves imgUrl={imgUrl} orientation={orientation} />
       <Typography

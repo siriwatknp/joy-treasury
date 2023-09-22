@@ -225,6 +225,7 @@ export default function cliToolbar() {
                     overflow: "auto",
                     display: "flex",
                     alignItems: "center",
+                    gap: 0.5,
                     background: (
                       theme
                     ) => `linear-gradient(to right, ${theme.vars.palette.neutral.softBg} 30%, rgba(255, 255, 255, 0)),
