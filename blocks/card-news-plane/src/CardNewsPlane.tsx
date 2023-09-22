@@ -28,7 +28,7 @@ export default function CardNewsPlane() {
         </Typography>
       </CardContent>
       <CardContent orientation="horizontal" sx={{ alignItems: "center" }}>
-        <Avatar src="https://i.pravatar.cc/300" />
+        <Avatar src="https://i.pravatar.cc/300?img=1" />
         <Typography level="body-sm" textColor="text.tertiary">
           John Smith
         </Typography>
