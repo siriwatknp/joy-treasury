@@ -214,18 +214,20 @@ export default function cliToolbar() {
                   </IconButton>
                 </Tooltip>
               )}
-              <Box
-                sx={{
-                  borderRadius: "inherit",
-                  mr: -0.5,
-                  my: -0.5,
-                  minWidth: 0,
-                  overflow: "auto",
-                  display: "flex",
-                  alignItems: "center",
-                  background: (
-                    theme
-                  ) => `linear-gradient(to right, ${theme.vars.palette.neutral.softBg} 30%, rgba(255, 255, 255, 0)),
+              {blocks.length > 0 && (
+                <Box
+                  sx={{
+                    borderRadius: "inherit",
+                    mr: -0.5,
+                    my: -0.5,
+                    pr: 1,
+                    minWidth: 0,
+                    overflow: "auto",
+                    display: "flex",
+                    alignItems: "center",
+                    background: (
+                      theme
+                    ) => `linear-gradient(to right, ${theme.vars.palette.neutral.softBg} 30%, rgba(255, 255, 255, 0)),
                     linear-gradient(to right, rgba(255, 255, 255, 0), ${theme.vars.palette.neutral.softBg} 70%) 0 100%,
                     radial-gradient(
                       farthest-side at 0 50%,
@@ -238,53 +240,55 @@ export default function cliToolbar() {
                         rgba(0, 0, 0, 0)
                       )
                       0 100%`,
-                  backgroundSize: "64px 100%, 64px 100%, 40px 200%, 40px 200%",
-                  backgroundPosition: "0 0, 100% 0, 0 50%, 100% 50%",
-                  backgroundRepeat: "no-repeat",
-                  backgroundAttachment: "local, local, scroll, scroll",
-                  backgroundColor: "neutral.softBg",
-                  "&::-webkit-scrollbar": {
-                    display: "none",
-                  },
-                }}
-              >
-                {blocks.map((block) => (
-                  <Chip
-                    variant="plain"
-                    size="sm"
-                    key={block.id}
-                    onClick={linkTo(block.id)}
-                    sx={{
-                      bgcolor: "transparent",
-                      "& > button": { bgcolor: "transparent" },
-                    }}
-                    endDecorator={
-                      <ChipDelete
-                        onClick={() => {
-                          setBlocks((prev) => {
-                            const index = prev.findIndex(
-                              (item) => item.id === block.id
-                            );
-                            if (index === -1) {
-                              return prev;
-                            }
-                            prev.splice(index, 1);
-                            localStorage.setItem(
-                              "cli-blocks",
-                              JSON.stringify([...prev])
-                            );
-                            return [...prev];
-                          });
-                        }}
-                      />
-                    }
-                  >
-                    <Tooltip describeChild title="Goto block">
-                      <span>{block.id.replace(/--.*/, "")}</span>
-                    </Tooltip>
-                  </Chip>
-                ))}
-              </Box>
+                    backgroundSize:
+                      "64px 100%, 64px 100%, 40px 200%, 40px 200%",
+                    backgroundPosition: "0 0, 100% 0, 0 50%, 100% 50%",
+                    backgroundRepeat: "no-repeat",
+                    backgroundAttachment: "local, local, scroll, scroll",
+                    backgroundColor: "neutral.softBg",
+                    "&::-webkit-scrollbar": {
+                      display: "none",
+                    },
+                  }}
+                >
+                  {blocks.map((block) => (
+                    <Chip
+                      variant="soft"
+                      size="sm"
+                      key={block.id}
+                      onClick={linkTo(block.id)}
+                      sx={{
+                        bgcolor: "transparent",
+                        "& > button": { bgcolor: "transparent" },
+                      }}
+                      endDecorator={
+                        <ChipDelete
+                          onClick={() => {
+                            setBlocks((prev) => {
+                              const index = prev.findIndex(
+                                (item) => item.id === block.id
+                              );
+                              if (index === -1) {
+                                return prev;
+                              }
+                              prev.splice(index, 1);
+                              localStorage.setItem(
+                                "cli-blocks",
+                                JSON.stringify([...prev])
+                              );
+                              return [...prev];
+                            });
+                          }}
+                        />
+                      }
+                    >
+                      <Tooltip describeChild title="Goto block">
+                        <span>{block.id.replace(/--.*/, "")}</span>
+                      </Tooltip>
+                    </Chip>
+                  ))}
+                </Box>
+              )}
             </>
           )}
         </Sheet>

@@ -9,7 +9,10 @@ import Typography from "@mui/joy/Typography";
 
 export default function CardNewsPlane() {
   return (
-    <Card sx={{ borderRadius: "xl", boxShadow: "none" }}>
+    <Card
+      variant="plain"
+      sx={{ bgcolor: "transparent", borderRadius: "xl", boxShadow: "none" }}
+    >
       <CardOverflow>
         <AspectRatio
           sx={{

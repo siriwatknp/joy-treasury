@@ -48,6 +48,7 @@ export default function CardCoverStream() {
       />
       <Chip
         sx={{
+          minHeight: 32,
           borderRadius: "xl",
           position: "absolute",
           top: 0,
