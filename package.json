@@ -29,11 +29,9 @@
     "new-block": "cd .hygen && hygen block new"
   },
   "resolutions": {
-    "jackspeak": "2.1.1",
-    "@mui/material": "npm:@mui/joy@latest"
+    "jackspeak": "2.1.1"
   },
   "dependencies": {
-    "@mui/material": "npm:@mui/joy@latest",
     "@types/got": "9.6.11",
     "@types/rimraf": "3.0.0",
     "@types/tar": "4.0.4",
@@ -55,7 +53,6 @@
     "@emotion/react": "11.11.1",
     "@emotion/styled": "11.11.0",
     "@ianvs/prettier-plugin-sort-imports": "4.1.0",
-    "@mui/icons-material": "^5.14.9",
     "@mui/joy": "5.0.0-beta.3",
     "@storybook/addon-essentials": "7.2.3",
     "@storybook/addon-info": "5.3.21",
