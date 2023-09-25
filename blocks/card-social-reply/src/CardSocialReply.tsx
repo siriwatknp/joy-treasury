@@ -79,12 +79,7 @@ export default function CardSocialReply({}: CardSocialReplyProps) {
 
                   <Typography
                     level="body-xs"
-                    sx={{
-                      whiteSpace: "nowrap",
-                      overflow: "hidden",
-                      textOverflow: "ellipsis",
-                      minWidth: 0,
-                    }}
+                    noWrap
                   >
                     Took a trip to LA last Took a trip to LA last
                   </Typography>
