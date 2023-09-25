@@ -1,14 +1,12 @@
 import React from "react";
-import {
-  Avatar,
-  Card,
-  CardContent,
-  Sheet,
-  Stack,
-  styled,
-  Typography,
-} from "@mui/joy";
+import Avatar from "@mui/joy/Avatar";
 import Box from "@mui/joy/Box";
+import Card from "@mui/joy/Card";
+import CardContent from "@mui/joy/CardContent";
+import Sheet from "@mui/joy/Sheet";
+import Stack from "@mui/joy/Stack";
+import { styled } from "@mui/joy/styles";
+import Typography from "@mui/joy/Typography";
 
 const TypographyAction = styled(Typography)`
   cursor: pointer;
