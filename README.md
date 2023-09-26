@@ -79,6 +79,7 @@ Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/d
     <tr>
       <td align="center" valign="top" width="14.28%"><a href="https://github.com/kevintruo"><img src="https://avatars.githubusercontent.com/u/137844738?v=4?s=100" width="100px;" alt="kevintruo"/><br /><sub><b>kevintruo</b></sub></a><br /><a href="https://github.com/siriwatknp/joy-treasury/commits?author=kevintruo" title="Code">💻</a></td>
       <td align="center" valign="top" width="14.28%"><a href="https://crispyscript.com"><img src="https://avatars.githubusercontent.com/u/19894957?v=4?s=100" width="100px;" alt="Pob Ch"/><br /><sub><b>Pob Ch</b></sub></a><br /><a href="https://github.com/siriwatknp/joy-treasury/commits?author=pobch" title="Code">💻</a></td>
+      <td align="center" valign="top" width="14.28%"><a href="https://github.com/bossthanawat"><img src="https://avatars.githubusercontent.com/u/29191825?v=4?s=100" width="100px;" alt="bossthanawat"/><br /><sub><b>bossthanawat</b></sub></a><br /><a href="https://github.com/siriwatknp/joy-treasury/commits?author=bossthanawat" title="Code">💻</a></td>
     </tr>
   </tbody>
 </table>
