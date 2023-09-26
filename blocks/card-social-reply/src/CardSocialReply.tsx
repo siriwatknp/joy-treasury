@@ -3,18 +3,10 @@ import Avatar from "@mui/joy/Avatar";
 import Box from "@mui/joy/Box";
 import Card from "@mui/joy/Card";
 import CardContent from "@mui/joy/CardContent";
+import Link from "@mui/joy/Link";
 import Sheet from "@mui/joy/Sheet";
 import Stack from "@mui/joy/Stack";
-import { styled } from "@mui/joy/styles";
 import Typography from "@mui/joy/Typography";
-
-const TypographyAction = styled(Typography)`
-  cursor: pointer;
-`;
-TypographyAction.defaultProps = {
-  level: "title-sm",
-  textColor: "#9597A1",
-};
 
 interface CardSocialReplyProps {}
 
@@ -47,15 +39,25 @@ export default function CardSocialReply({}: CardSocialReplyProps) {
           </Sheet>
           <Box sx={{ pl: 1.5, pt: 1 }}>
             <Stack direction={"row"} spacing={1} alignItems={"end"}>
-              <TypographyAction>Reply</TypographyAction>
-              <TypographyAction>React</TypographyAction>
+              <Link component="button" level="title-sm" color="neutral">
+                Reply
+              </Link>
+              <Link component="button" level="title-sm" color="neutral">
+                React
+              </Link>
               <Typography level="body-xs" sx={{ color: "#9597A1" }}>
                 47 min ago
               </Typography>
             </Stack>
-            <Typography level="title-sm" sx={{ pt: 1 }} fontWeight="lg">
+            <Link
+              component="button"
+              color="neutral"
+              level="title-sm"
+              fontWeight="lg"
+              sx={{ pt: 1, color: "text.primary" }}
+            >
               Show 37 more replies
-            </Typography>
+            </Link>
             <Stack spacing={1} sx={{ pt: 1.25 }}>
               {[...new Array(3)].map((_, index) => (
                 <Stack
@@ -77,10 +79,7 @@ export default function CardSocialReply({}: CardSocialReplyProps) {
                     Elsa Hosk
                   </Typography>
 
-                  <Typography
-                    level="body-xs"
-                    noWrap
-                  >
+                  <Typography level="body-xs" noWrap>
                     Took a trip to LA last Took a trip to LA last
                   </Typography>
                 </Stack>
