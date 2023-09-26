@@ -13,10 +13,11 @@ export default function ListFeaturedCity() {
     <List sx={{ p: 0, "& > li": { p: 0 } }}>
       <ListItem>
         <Card
+          variant="plain"
           orientation="horizontal"
           sx={{ boxShadow: "none", bgcolor: "transparent" }}
         >
-          <AspectRatio sx={{ boxShadow: "md", minWidth: 144, display: "flex" }}>
+          <AspectRatio flex sx={{ boxShadow: "md", minWidth: 144 }}>
             <img src="https://images.unsplash.com/photo-1512453979798-5ea266f8880c?fm=jpg&fit=crop&w=1080&q=80&fit=max" />
           </AspectRatio>
           <CardContent sx={{ gap: 0.5 }}>
@@ -59,10 +60,11 @@ export default function ListFeaturedCity() {
 
       <ListItem>
         <Card
+          variant="plain"
           orientation="horizontal"
           sx={{ boxShadow: "none", bgcolor: "transparent" }}
         >
-          <AspectRatio sx={{ boxShadow: "md", minWidth: 144, display: "flex" }}>
+          <AspectRatio flex sx={{ boxShadow: "md", minWidth: 144 }}>
             <img src="https://images.unsplash.com/photo-1529655683826-aba9b3e77383?fm=jpg&fit=crop&w=1080&q=80&fit=max" />
           </AspectRatio>
           <CardContent sx={{ gap: 0.5 }}>
@@ -105,10 +107,11 @@ export default function ListFeaturedCity() {
 
       <ListItem>
         <Card
+          variant="plain"
           orientation="horizontal"
           sx={{ boxShadow: "none", bgcolor: "transparent" }}
         >
-          <AspectRatio sx={{ boxShadow: "md", minWidth: 144, display: "flex" }}>
+          <AspectRatio flex sx={{ boxShadow: "md", minWidth: 144 }}>
             <img src="https://images.unsplash.com/photo-1582468546235-9bf31e5bc4a1?fm=jpg&fit=crop&w=1080&q=80&fit=max" />
           </AspectRatio>
           <CardContent sx={{ gap: 0.5 }}>

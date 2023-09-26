@@ -1,0 +1,44 @@
+{
+  "files": [
+    "README.md"
+  ],
+  "imageSize": 100,
+  "commit": false,
+  "commitType": "docs",
+  "commitConvention": "angular",
+  "contributors": [
+    {
+      "login": "kevintruo",
+      "name": "kevintruo",
+      "avatar_url": "https://avatars.githubusercontent.com/u/137844738?v=4",
+      "profile": "https://github.com/kevintruo",
+      "contributions": [
+        "code"
+      ]
+    },
+    {
+      "login": "bossthanawat",
+      "name": "bossthanawat",
+      "avatar_url": "https://avatars.githubusercontent.com/u/29191825?v=4",
+      "profile": "https://github.com/bossthanawat",
+      "contributions": [
+        "code"
+      ]
+    },
+    {
+      "login": "pobch",
+      "name": "Pob Ch",
+      "avatar_url": "https://avatars.githubusercontent.com/u/19894957?v=4",
+      "profile": "https://crispyscript.com",
+      "contributions": [
+        "code"
+      ]
+    }
+  ],
+  "contributorsPerLine": 7,
+  "skipCi": true,
+  "repoType": "github",
+  "repoHost": "https://github.com",
+  "projectName": "joy-treasury",
+  "projectOwner": "siriwatknp"
+}

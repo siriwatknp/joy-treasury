@@ -37,6 +37,7 @@ const useResizeHandle = (
     return clientX as number;
   }, []);
   const handleStart = (event: React.MouseEvent | React.TouchEvent) => {
+    console.log("start");
     const clientX = getClientX(event.nativeEvent);
     const rect = (event.target as HTMLElement).getBoundingClientRect();
     setDragging(true);
@@ -117,7 +118,7 @@ export default function draggableIframe() {
               right: 0,
               top: 0,
               bottom: 0,
-              opacity: 0,
+              background: "rgba(0,0,0,0.04)",
               transition: "0.2s",
               display: "flex",
               justifyContent: "center",
@@ -127,7 +128,6 @@ export default function draggableIframe() {
               borderBottomLeftRadius: "2rem 100vh",
               backdropFilter: "blur(4px)",
               "&:hover": {
-                opacity: 1,
                 background: "rgba(0,0,0,0.1)",
                 cursor: "col-resize",
               },
