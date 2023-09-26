@@ -7,6 +7,7 @@ import List from "@mui/joy/List";
 import ListItem from "@mui/joy/ListItem";
 import ListItemButton from "@mui/joy/ListItemButton";
 import ListItemContent from "@mui/joy/ListItemContent";
+import ListSubheader from "@mui/joy/ListSubheader";
 import SvgIcon from "@mui/joy/SvgIcon";
 import { Command } from "cmdk";
 
@@ -48,30 +49,7 @@ export default function CmdkJoyDefault() {
           "--List-gap": "4px",
           "--ListItem-radius": "8px",
           "--ListItem-minHeight": "44px",
-          "[cmdk-group-heading]": {
-            pl: 1,
-            display: "flex",
-            alignItems: "center",
-            marginTop: 1,
-            marginBottom: 0.5,
-            marginInline: "var(--ListItem-marginInline)",
-            paddingBlock: "var(--ListItem-paddingY)",
-            ...theme.typography["body-xs"],
-            color: theme.vars.palette.text.tertiary,
-          },
-          "[cmdk-empty]": {
-            minHeight: "var(--ListItem-minHeight)",
-            justifyContent: "center",
-            display: "flex",
-            alignItems: "center",
-            ...theme.typography["body-sm"],
-          },
-          '[aria-selected="true"]': {
-            ...theme.variants.plainHover.neutral,
-            "&:active": {
-              ...theme.variants.plainActive.neutral,
-            },
-          },
+          '[aria-selected="true"]': theme.variants.plainHover.neutral,
           "[hidden]": {
             display: "none",
           },
@@ -84,9 +62,15 @@ export default function CmdkJoyDefault() {
           },
         })}
       >
-        <Command.Empty>No results found.</Command.Empty>
+        <ListItem component={Command.Empty} sx={{ justifyContent: "center" }}>
+          No results found.
+        </ListItem>
 
-        <ListItem nested component={Command.Group} heading="Projects">
+        <ListItem
+          nested
+          component={Command.Group}
+          heading={<ListSubheader>Projects</ListSubheader>}
+        >
           <ListItemButton component={Command.Item}>
             <SvgIcon>
               <svg
@@ -135,7 +119,11 @@ export default function CmdkJoyDefault() {
           </ListItemButton>
         </ListItem>
 
-        <ListItem nested component={Command.Group} heading="Teams">
+        <ListItem
+          nested
+          component={Command.Group}
+          heading={<ListSubheader>Teams</ListSubheader>}
+        >
           <ListItemButton component={Command.Item}>
             <SvgIcon>
               <svg
@@ -184,7 +172,11 @@ export default function CmdkJoyDefault() {
           </ListItemButton>
         </ListItem>
 
-        <ListItem nested component={Command.Group} heading="Help">
+        <ListItem
+          nested
+          component={Command.Group}
+          heading={<ListSubheader>Help</ListSubheader>}
+        >
           <ListItemButton component={Command.Item}>
             <SvgIcon>
               <svg
