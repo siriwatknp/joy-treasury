@@ -1,4 +1,5 @@
 import React from "react";
+import AspectRatio from "@mui/joy/AspectRatio";
 import Avatar from "@mui/joy/Avatar";
 import Card from "@mui/joy/Card";
 import CardContent from "@mui/joy/CardContent";
@@ -34,7 +35,21 @@ export default function CardSocialSuggestions() {
             </ListItemDecorator>
             <ListItemContent>
               <Typography level="title-md">Jennifer Lawrence</Typography>
-              <Typography level="body-sm" textColor="primary.plainColor">
+              <Typography
+                level="body-sm"
+                color="success"
+                startDecorator={
+                  <AspectRatio
+                    variant="plain"
+                    ratio="1"
+                    sx={{
+                      width: 6,
+                      borderRadius: "50%",
+                      bgcolor: "success.400",
+                    }}
+                  />
+                }
+              >
                 Online
               </Typography>
             </ListItemContent>
@@ -50,10 +65,7 @@ export default function CardSocialSuggestions() {
             </ListItemDecorator>
             <ListItemContent>
               <Typography level="title-md">Nicolas Cage</Typography>
-              <Typography
-                level="body-sm"
-                textColor="neutral.plainDisabledColor"
-              >
+              <Typography level="body-sm" textColor="text.tertiary">
                 Last seen just now
               </Typography>
             </ListItemContent>
@@ -69,10 +81,7 @@ export default function CardSocialSuggestions() {
             </ListItemDecorator>
             <ListItemContent>
               <Typography level="title-md">Amy Adams</Typography>
-              <Typography
-                level="body-sm"
-                textColor="neutral.plainDisabledColor"
-              >
+              <Typography level="body-sm" textColor="text.tertiary">
                 Last seen 5 min ago
               </Typography>
             </ListItemContent>
