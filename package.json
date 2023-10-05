@@ -54,7 +54,7 @@
     "@emotion/react": "11.11.1",
     "@emotion/styled": "11.11.0",
     "@ianvs/prettier-plugin-sort-imports": "4.1.0",
-    "@mui/joy": "5.0.0-beta.7",
+    "@mui/joy": "5.0.0-beta.9",
     "@storybook/addon-essentials": "7.2.3",
     "@storybook/addon-info": "5.3.21",
     "@storybook/addon-links": "7.2.3",
