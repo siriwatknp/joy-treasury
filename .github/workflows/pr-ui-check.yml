@@ -8,6 +8,8 @@ permissions:
 jobs:
   build-deploy:
     runs-on: ubuntu-latest
+    permissions:
+      pull-requests: write
     steps:
       - uses: actions/checkout@v3
         with:
@@ -25,6 +27,7 @@ jobs:
         run: yarn build-storybook
 
       - name: Publish to Chromatic
+        id: chromatic
         uses: chromaui/action@v1
         # Chromatic GitHub Action options
         with:
@@ -32,3 +35,18 @@ jobs:
           storybookBuildDir: storybook-static
           exitZeroOnChanges: true # 👈 Option to prevent the workflow from failing
           skip: "@(renovate/**|dependabot/**)"
+
+      - name: Publish Summary
+        run: echo -e "| Results |  |\n| --- | --- |\n| Build Results | ${{steps.chromatic.outputs.buildUrl}} |\n| Storybook Preview | ${{steps.chromatic.outputs.storybookUrl}} |\n| Component Count | ${{steps.chromatic.outputs.componentCount}} |" >> $GITHUB_STEP_SUMMARY
+
+      - name: Add PR Comment
+        uses: mshick/add-pr-comment@v2
+        with:
+          message: |
+            | Results |  |
+            | --- | --- |
+            | Build Results | ${{steps.chromatic.outputs.buildUrl}} |
+            | Storybook Preview | ${{steps.chromatic.outputs.storybookUrl}} |
+            | Component Count | ${{steps.chromatic.outputs.componentCount}} |
+          proxy-url: https://add-pr-comment-proxy-js2jzvsqsq-uc.a.run.app
+          update-only: true
