@@ -9,7 +9,10 @@ import Typography from "@mui/joy/Typography";
 
 export default function CardNewsPlane() {
   return (
-    <Card sx={{ borderRadius: "xl", boxShadow: "none" }}>
+    <Card
+      variant="plain"
+      sx={{ bgcolor: "transparent", borderRadius: "xl", boxShadow: "none" }}
+    >
       <CardOverflow>
         <AspectRatio
           sx={{
@@ -28,7 +31,7 @@ export default function CardNewsPlane() {
         </Typography>
       </CardContent>
       <CardContent orientation="horizontal" sx={{ alignItems: "center" }}>
-        <Avatar src="https://i.pravatar.cc/300" />
+        <Avatar src="https://i.pravatar.cc/300?img=1" />
         <Typography level="body-sm" textColor="text.tertiary">
           John Smith
         </Typography>

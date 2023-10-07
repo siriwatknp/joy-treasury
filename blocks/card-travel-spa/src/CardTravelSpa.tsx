@@ -12,7 +12,7 @@ import Typography from "@mui/joy/Typography";
 
 export default function CardTravelSpa() {
   return (
-    <Card size="lg" sx={{ borderRadius: 0, boxShadow: "xl" }}>
+    <Card variant="plain" size="lg" sx={{ borderRadius: 0, boxShadow: "xl" }}>
       <CardOverflow>
         <AspectRatio ratio="7/5" maxHeight={300}>
           <img src="https://images.unsplash.com/photo-1470214203634-e436a8848e23" />
