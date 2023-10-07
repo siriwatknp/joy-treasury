@@ -41,13 +41,13 @@ const Rating = (props: RatingProps) => {
             key={i}
             sx={{
               fill: isFilledPartially ? `url(#linearColors)` : "orange",
+              stroke: "orange",
+              strokeWidth: 1,
             }}
           />
         );
       })}
-      <Typography textColor="#000" sx={{ fontSize: 11 }}>
-        {rating}
-      </Typography>
+      <Typography level="body-xs">{rating}</Typography>
       {filledPercentage ? (
         <svg width={0} height={0}>
           <linearGradient id="linearColors">
