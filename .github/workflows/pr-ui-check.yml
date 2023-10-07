@@ -49,3 +49,4 @@ jobs:
             | Storybook Preview | ${{steps.chromatic.outputs.storybookUrl}} |
             | Component Count | ${{steps.chromatic.outputs.componentCount}} |
           proxy-url: https://add-pr-comment-proxy-js2jzvsqsq-uc.a.run.app
+          update-only: true
