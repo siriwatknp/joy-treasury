@@ -43,5 +43,9 @@ jobs:
         uses: mshick/add-pr-comment@v2
         with:
           message: |
-            | Results |  |\n| --- | --- |\n| Build Results | ${{steps.chromatic.outputs.buildUrl}} |\n| Storybook Preview | ${{steps.chromatic.outputs.storybookUrl}} |\n| Component Count | ${{steps.chromatic.outputs.componentCount}} |
+            | Results |  |
+            | --- | --- |
+            | Build Results | ${{steps.chromatic.outputs.buildUrl}} |
+            | Storybook Preview | ${{steps.chromatic.outputs.storybookUrl}} |
+            | Component Count | ${{steps.chromatic.outputs.componentCount}} |
           proxy-url: https://add-pr-comment-proxy-js2jzvsqsq-uc.a.run.app
