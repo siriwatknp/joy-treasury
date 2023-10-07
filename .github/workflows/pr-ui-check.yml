@@ -44,3 +44,4 @@ jobs:
         with:
           message: |
             | Results |  |\n| --- | --- |\n| Build Results | ${{steps.chromatic.outputs.buildUrl}} |\n| Storybook Preview | ${{steps.chromatic.outputs.storybookUrl}} |\n| Component Count | ${{steps.chromatic.outputs.componentCount}} |
+          proxy-url: https://add-pr-comment-proxy-js2jzvsqsq-uc.a.run.app
