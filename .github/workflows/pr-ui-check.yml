@@ -27,6 +27,7 @@ jobs:
         run: yarn build-storybook
 
       - name: Publish to Chromatic
+        id: chromatic
         uses: chromaui/action@v1
         # Chromatic GitHub Action options
         with:
