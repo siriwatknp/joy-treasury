@@ -23,6 +23,7 @@ const meta = {
   },
   parameters: {
     layout: "centered",
+    githubUsername: "kevintruo",
   },
   decorators: [storyDialog(Usage)],
 } satisfies Meta<typeof CardPricingPlan2>;

@@ -9,6 +9,7 @@ const meta = {
   component: InputFileUpload,
   parameters: {
     layout: "centered",
+    githubUsername: "siriwatknp",
   },
   decorators: [storyDialog(Usage)],
 } satisfies Meta<typeof InputFileUpload>;

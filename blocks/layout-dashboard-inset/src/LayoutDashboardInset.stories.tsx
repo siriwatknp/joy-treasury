@@ -9,6 +9,7 @@ const meta = {
   component: LayoutDashboardInset,
   parameters: {
     layout: "fullscreen",
+    githubUsername: "siriwatknp",
   },
   decorators: [storyDialog(Usage)],
 } satisfies Meta<typeof LayoutDashboardInset>;

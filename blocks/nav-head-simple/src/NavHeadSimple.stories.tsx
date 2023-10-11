@@ -9,6 +9,7 @@ const meta = {
   component: NavHeadSimple,
   parameters: {
     layout: "centered",
+    githubUsername: "siriwatknp",
   },
   decorators: [storyDialog(Usage)],
 } satisfies Meta<typeof NavHeadSimple>;

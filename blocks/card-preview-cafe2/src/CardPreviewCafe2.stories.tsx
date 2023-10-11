@@ -9,6 +9,7 @@ const meta = {
   component: CardPreviewCafe2,
   parameters: {
     layout: "centered",
+    githubUsername: "kevintruo",
   },
   decorators: [storyDialog(Usage)],
 } satisfies Meta<typeof CardPreviewCafe2>;

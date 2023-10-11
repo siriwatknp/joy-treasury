@@ -9,6 +9,7 @@ const meta = {
   component: CardCoverTrip,
   parameters: {
     layout: "centered",
+    githubUsername: "siriwatknp",
   },
   decorators: [storyDialog(Usage)],
 } satisfies Meta<typeof CardCoverTrip>;

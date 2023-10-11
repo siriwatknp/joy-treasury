@@ -13,6 +13,7 @@ const meta = {
   component: <%=h.toName(name)%>,
   parameters: {
     layout: "centered",
+    githubUsername: "", // (optional) Your github username. If provided, your avatar will be displayed in the story toolbar
   },
   decorators: [storyDialog(Usage)],
 } satisfies Meta<typeof <%=h.toName(name)%>>;

@@ -9,6 +9,7 @@ const meta = {
   component: ListFeaturedCity,
   parameters: {
     layout: "centered",
+    githubUsername: "siriwatknp",
   },
   decorators: [
     storyDialog(Usage),

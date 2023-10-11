@@ -10,6 +10,7 @@ const meta = {
   component: CardNewsMaldives,
   parameters: {
     layout: "centered",
+    githubUsername: "siriwatknp",
   },
   decorators: [storyDialog(Usage)],
 } satisfies Meta<typeof CardNewsMaldives>;

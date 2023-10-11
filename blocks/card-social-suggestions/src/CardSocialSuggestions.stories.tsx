@@ -9,6 +9,7 @@ const meta = {
   component: CardSocialSuggestions,
   parameters: {
     layout: "centered",
+    githubUsername: "pobch",
   },
   decorators: [storyDialog(Usage)],
 } satisfies Meta<typeof CardSocialSuggestions>;

@@ -9,6 +9,7 @@ const meta = {
   component: CardFormSignup,
   parameters: {
     layout: "centered",
+    githubUsername: "siriwatknp",
   },
   decorators: [storyDialog(Usage)],
 } satisfies Meta<typeof CardFormSignup>;

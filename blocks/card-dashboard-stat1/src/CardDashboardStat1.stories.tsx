@@ -10,6 +10,7 @@ const meta = {
   component: CardDashboardStat1,
   parameters: {
     layout: "centered",
+    githubUsername: "siriwatknp",
   },
   decorators: [storyDialog(Usage)],
 } satisfies Meta<typeof CardDashboardStat1>;

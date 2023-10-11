@@ -9,6 +9,7 @@ const meta = {
   component: CardFeaturedRepo,
   parameters: {
     layout: "centered",
+    githubUsername: "siriwatknp",
   },
   decorators: [storyDialog(Usage)],
 } satisfies Meta<typeof CardFeaturedRepo>;

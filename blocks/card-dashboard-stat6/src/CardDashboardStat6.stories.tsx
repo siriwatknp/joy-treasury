@@ -9,6 +9,7 @@ const meta = {
   component: CardDashboardStat6,
   parameters: {
     layout: "padded",
+    githubUsername: "siriwatknp",
   },
   decorators: [storyDialog(Usage)],
 } satisfies Meta<typeof CardDashboardStat6>;

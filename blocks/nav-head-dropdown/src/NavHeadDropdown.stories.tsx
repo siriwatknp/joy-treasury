@@ -9,6 +9,7 @@ const meta = {
   component: NavHeadDropdown,
   parameters: {
     layout: "centered",
+    githubUsername: "siriwatknp",
   },
   decorators: [storyDialog(Usage)],
 } satisfies Meta<typeof NavHeadDropdown>;

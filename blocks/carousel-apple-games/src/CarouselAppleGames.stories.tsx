@@ -9,6 +9,7 @@ const meta = {
   component: CarouselAppleGames,
   parameters: {
     layout: "centered",
+    githubUsername: "siriwatknp",
   },
   decorators: [storyDialog(Usage)],
 } satisfies Meta<typeof CarouselAppleGames>;

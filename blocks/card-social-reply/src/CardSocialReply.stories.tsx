@@ -9,6 +9,7 @@ const meta = {
   component: CardSocialReply,
   parameters: {
     layout: "centered",
+    githubUsername: "bossthanawat",
   },
   decorators: [storyDialog(Usage)],
 } satisfies Meta<typeof CardSocialReply>;
@@ -27,7 +28,7 @@ export const Reply: Story = {
         overflow: "auto",
       }}
     >
-      <CardSocialReply/>
+      <CardSocialReply />
     </div>
   ),
 };

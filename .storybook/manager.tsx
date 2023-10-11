@@ -1,10 +1,12 @@
-import { addons } from "@storybook/addons";
+import React from "react";
+import ReactGA from "react-ga4";
+import { addons, types } from "@storybook/addons";
 import {
   STORY_CHANGED,
   STORY_ERRORED,
   STORY_MISSING,
 } from "@storybook/core-events";
-import ReactGA from "react-ga4";
+import { Tool } from "./decorators/Author";
 
 // https://storybook.js.org/docs/react/configure/features-and-behavior
 addons.setConfig({
@@ -39,5 +41,13 @@ addons.register("google-analytics", (api) => {
       description: `attempted to render ${id}, but it is missing`,
       fatal: false,
     });
+  });
+});
+
+addons.register("contributor", () => {
+  addons.add("contributor/toolbar", {
+    title: "Author",
+    type: types.TOOL,
+    render: Tool as unknown as () => React.ReactElement,
   });
 });

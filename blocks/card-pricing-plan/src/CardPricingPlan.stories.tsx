@@ -9,6 +9,7 @@ const meta = {
   component: CardPricingPlan,
   parameters: {
     layout: "centered",
+    githubUsername: "siriwatknp",
   },
   decorators: [storyDialog(Usage)],
 } satisfies Meta<typeof CardPricingPlan>;

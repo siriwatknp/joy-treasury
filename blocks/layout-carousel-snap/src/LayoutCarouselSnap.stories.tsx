@@ -9,6 +9,7 @@ const meta = {
   component: LayoutCarouselSnap,
   parameters: {
     layout: "padded",
+    githubUsername: "siriwatknp",
   },
   decorators: [storyDialog(Usage)],
 } satisfies Meta<typeof LayoutCarouselSnap>;

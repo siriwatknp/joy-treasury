@@ -9,6 +9,7 @@ const meta = {
   component: LayoutScrollShadow,
   parameters: {
     layout: "centered",
+    githubUsername: "siriwatknp",
   },
   decorators: [storyDialog(Usage)],
 } satisfies Meta<typeof LayoutScrollShadow>;

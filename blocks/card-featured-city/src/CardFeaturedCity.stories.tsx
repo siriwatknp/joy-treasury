@@ -9,6 +9,7 @@ const meta = {
   component: CardFeaturedCity,
   parameters: {
     layout: "centered",
+    githubUsername: "siriwatknp",
   },
   decorators: [
     storyDialog(Usage),

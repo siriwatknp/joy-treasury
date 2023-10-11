@@ -9,6 +9,7 @@ const meta = {
   component: InputColorPicker,
   parameters: {
     layout: "centered",
+    githubUsername: "siriwatknp",
   },
   decorators: [storyDialog(Usage)],
 } satisfies Meta<typeof InputColorPicker>;

@@ -9,6 +9,7 @@ const meta = {
   component: LandingMainBenefit,
   parameters: {
     layout: "fullscreen",
+    githubUsername: "siriwatknp",
   },
   decorators: [storyDialog(Usage)],
 } satisfies Meta<typeof LandingMainBenefit>;

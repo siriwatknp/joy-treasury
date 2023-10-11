@@ -9,6 +9,7 @@ const meta = {
   component: LayoutDashboardCurve,
   parameters: {
     layout: "fullscreen",
+    githubUsername: "siriwatknp",
   },
   decorators: [storyDialog(Usage)],
 } satisfies Meta<typeof LayoutDashboardCurve>;

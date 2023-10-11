@@ -9,6 +9,7 @@ const meta = {
   component: NavSidebarDashboard2,
   parameters: {
     layout: "centered",
+    githubUsername: "siriwatknp",
   },
   decorators: [storyDialog(Usage)],
 } satisfies Meta<typeof NavSidebarDashboard2>;

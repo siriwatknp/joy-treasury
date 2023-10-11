@@ -9,6 +9,7 @@ const meta = {
   component: LayoutGridPosts3,
   parameters: {
     layout: "padded",
+    githubUsername: "siriwatknp",
   },
   decorators: [storyDialog(Usage)],
 } satisfies Meta<typeof LayoutGridPosts3>;

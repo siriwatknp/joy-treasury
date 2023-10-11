@@ -11,6 +11,7 @@ const meta = {
   component: CardTravelSpa,
   parameters: {
     layout: "centered",
+    githubUsername: "siriwatknp",
   },
   decorators: [
     storyDialog(Usage),

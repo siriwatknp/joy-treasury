@@ -9,6 +9,7 @@ const meta = {
   component: CmdkJoyDefault,
   parameters: {
     layout: "centered",
+    githubUsername: "siriwatknp",
   },
   decorators: [storyDialog(Usage)],
 } satisfies Meta<typeof CmdkJoyDefault>;

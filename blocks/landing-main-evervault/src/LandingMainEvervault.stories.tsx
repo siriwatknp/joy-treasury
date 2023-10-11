@@ -9,6 +9,7 @@ const meta = {
   component: LandingMainEvervault,
   parameters: {
     layout: "fullscreen",
+    githubUsername: "siriwatknp",
   },
   decorators: [storyDialog(Usage)],
 } satisfies Meta<typeof LandingMainEvervault>;
