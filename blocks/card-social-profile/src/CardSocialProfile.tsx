@@ -11,29 +11,26 @@ import Typography from "@mui/joy/Typography";
 export default function CardSocialProfile() {
   return (
     <Card
-      sx={{ background: "white", p: "20px", borderRadius: "20px" }}
-      variant="solid"
-      size="md"
+      variant="plain"
+      sx={{ p: "20px", borderRadius: "20px", bgcolor: "background.body" }}
     >
       <CardContent sx={{ gap: "12px" }}>
         <Box
           sx={{
             display: "flex",
-            justifyContent: "space-between",
             alignItems: "center",
             gap: "12px",
           }}
         >
           <Avatar
             src="https://i.pinimg.com/originals/c7/e2/5c/c7e25c9979b38201ee2b1729b2f3c151.png"
-            sx={{ width: "30%", height: "auto" }}
+            sx={{ width: "92px", height: "auto" }}
           />
           <Box
             sx={{
               display: "flex",
               flexDirection: "column",
               gap: "8px",
-              width: "1",
             }}
           >
             <Box
@@ -48,7 +45,7 @@ export default function CardSocialProfile() {
               >
                 <Typography
                   level="body-sm"
-                  sx={{ color: "primary.900", fontWeight: "bold" }}
+                  sx={{ color: "text.primary", fontWeight: "bold" }}
                 >
                   142
                 </Typography>
@@ -63,7 +60,7 @@ export default function CardSocialProfile() {
               >
                 <Typography
                   level="body-sm"
-                  sx={{ color: "primary.900", fontWeight: "bold" }}
+                  sx={{ color: "text.primary", fontWeight: "bold" }}
                 >
                   7.4M
                 </Typography>
@@ -78,7 +75,7 @@ export default function CardSocialProfile() {
               >
                 <Typography
                   level="body-sm"
-                  sx={{ color: "primary.900", fontWeight: "bold" }}
+                  sx={{ color: "text.primary", fontWeight: "bold" }}
                 >
                   117
                 </Typography>
@@ -98,13 +95,12 @@ export default function CardSocialProfile() {
                 Message
               </Button>
               <IconButton
-                variant="soft"
+                variant="outlined"
                 size="sm"
                 sx={{
                   borderRadius: 40,
                   backgroundColor: "white",
                   width: "30%",
-                  border: "1px solid",
                   "&:hover": {
                     backgroundColor: "white",
                   },
@@ -122,9 +118,9 @@ export default function CardSocialProfile() {
                     viewBox="0 0 24 24"
                     fill="none"
                     stroke="currentColor"
-                    stroke-width="2"
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
+                    strokeWidth="2"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
                   >
                     <path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2" />
                     <circle cx="9" cy="7" r="4" />
@@ -137,25 +133,28 @@ export default function CardSocialProfile() {
         </Box>
         <Box>
           <Box sx={{ marginBottom: "8px" }}>
-            <Typography level="h3" sx={{ color: "primary.900" }}>
-              Saba
+            <Typography level="h3">Saba</Typography>
+            <Typography level="body-md" sx={{ fontWeight: "semibold" }}>
+              Band / Musician
             </Typography>
-            <Typography level="body-md" sx={{ fontWeight: 'semibold' }}>Band / Musician</Typography>
           </Box>
-          <Typography level="body-md" sx={{ color: "primary.900" }}>
+          <Typography level="body-md" textColor="text.primary">
             PIVOTGANG 🏀
           </Typography>
-          <Typography level="body-md" sx={{ color: "primary.900" }}>
+          <Typography level="body-md" textColor="text.primary">
             CARE FOR ME TOUR OUT NOW 🎙
           </Typography>
           <Link level="body-sm">#CHI-TOWN</Link>
-          <Typography level="body-sm" sx={{ color: "primary.900" }}>
+          <Typography level="body-sm" textColor="text.primary">
             This remind me of before we had insomnia
           </Typography>
-          <Typography level="body-sm" sx={{ color: "primary.900" }}>
+          <Typography level="body-sm" textColor="text.primary">
             Sleepin' peacefully, never needed a pile of drugs
           </Typography>
-          <Link level="body-sm" sx={{ color: "primary.500", fontWeight: 'bold' }}>
+          <Link
+            level="body-sm"
+            sx={{ color: "primary.500", fontWeight: "bold" }}
+          >
             pivotgang.com
           </Link>
         </Box>

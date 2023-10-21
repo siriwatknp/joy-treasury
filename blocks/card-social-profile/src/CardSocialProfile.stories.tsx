@@ -9,7 +9,7 @@ const meta = {
   component: CardSocialProfile,
   parameters: {
     layout: "centered",
-    githubUsername: "", // (optional) Your github username. If provided, your avatar will be displayed in the story toolbar
+    githubUsername: "mildiemilk", // (optional) Your github username. If provided, your avatar will be displayed in the story toolbar
   },
   decorators: [storyDialog(Usage)],
 } satisfies Meta<typeof CardSocialProfile>;
@@ -19,7 +19,7 @@ type Story = StoryObj<typeof meta>;
 
 export const Profile: Story = {
   render: () => (
-    <div 
+    <div
       style={{
         width: 420,
         padding: 20,
@@ -32,5 +32,3 @@ export const Profile: Story = {
     </div>
   ),
 };
-
-
