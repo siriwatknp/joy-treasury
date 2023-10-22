@@ -44,9 +44,9 @@ export default function CardSocialComment() {
           {
             comments.map(({ commentor, commentAt, comments, color }) => (
               <ListItem>
-                <Box display="flex">
+                <Box display="flex" width="100%">
                   <Avatar color={color as ColorPaletteProp}>{convertNameToAvatarText(commentor)}</Avatar>
-                  <Box marginLeft="8px" marginBottom="8px">
+                  <Box width="100%" marginLeft="8px" marginBottom="8px">
                     <Box display="flex" justifyContent="space-between" alignItems="flex-end" marginBottom="4px">
                       <Typography fontWeight="lg">{commentor}</Typography>
                       <Typography fontSize="xs">{commentAt}</Typography>
