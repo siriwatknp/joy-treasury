@@ -32,6 +32,8 @@
     "jackspeak": "2.1.1"
   },
   "dependencies": {
+    "@mui/icons-material": "^5.14.14",
+    "@mui/material": "^5.14.14",
     "@types/got": "9.6.11",
     "@types/rimraf": "3.0.0",
     "@types/tar": "4.0.4",
