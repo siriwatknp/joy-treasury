@@ -42,6 +42,15 @@
       "contributions": [
         "code"
       ]
+    },
+    {
+      "login": "Annerez",
+      "name": "Anner",
+      "avatar_url": "https://avatars.githubusercontent.com/u/98201562?v=4",
+      "profile": "http://annerez.github.io",
+      "contributions": [
+        "code"
+      ]
     }
   ],
   "contributorsPerLine": 7,

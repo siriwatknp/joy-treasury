@@ -1,6 +1,6 @@
 # 👋 Welcome! to Joy Treasury
 <!-- ALL-CONTRIBUTORS-BADGE:START - Do not remove or modify this section -->
-[![All Contributors](https://img.shields.io/badge/all_contributors-4-orange.svg?style=flat-square)](#contributors-)
+[![All Contributors](https://img.shields.io/badge/all_contributors-5-orange.svg?style=flat-square)](#contributors-)
 <!-- ALL-CONTRIBUTORS-BADGE:END -->
 
 Joy Treasury is a collection of blocks that are ready-to-use for [Joy UI](https://mui.com/joy-ui/getting-started/) projects.
@@ -81,6 +81,7 @@ Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/d
       <td align="center" valign="top" width="14.28%"><a href="https://github.com/bossthanawat"><img src="https://avatars.githubusercontent.com/u/29191825?v=4?s=100" width="100px;" alt="bossthanawat"/><br /><sub><b>bossthanawat</b></sub></a><br /><a href="https://github.com/siriwatknp/joy-treasury/commits?author=bossthanawat" title="Code">💻</a></td>
       <td align="center" valign="top" width="14.28%"><a href="https://crispyscript.com"><img src="https://avatars.githubusercontent.com/u/19894957?v=4?s=100" width="100px;" alt="Pob Ch"/><br /><sub><b>Pob Ch</b></sub></a><br /><a href="https://github.com/siriwatknp/joy-treasury/commits?author=pobch" title="Code">💻</a></td>
       <td align="center" valign="top" width="14.28%"><a href="https://github.com/mildiemilk"><img src="https://avatars.githubusercontent.com/u/19834348?v=4?s=100" width="100px;" alt="mildiemilk"/><br /><sub><b>mildiemilk</b></sub></a><br /><a href="https://github.com/siriwatknp/joy-treasury/commits?author=mildiemilk" title="Code">💻</a></td>
+      <td align="center" valign="top" width="14.28%"><a href="http://annerez.github.io"><img src="https://avatars.githubusercontent.com/u/98201562?v=4?s=100" width="100px;" alt="Anner"/><br /><sub><b>Anner</b></sub></a><br /><a href="https://github.com/siriwatknp/joy-treasury/commits?author=Annerez" title="Code">💻</a></td>
     </tr>
   </tbody>
 </table>
