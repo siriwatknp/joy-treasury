@@ -9,7 +9,7 @@ const meta = {
   component: CardSocialComment,
   parameters: {
     layout: "centered",
-    githubUsername: "", // (optional) Your github username. If provided, your avatar will be displayed in the story toolbar
+    githubUsername: "Tlezip", // (optional) Your github username. If provided, your avatar will be displayed in the story toolbar
   },
   decorators: [storyDialog(Usage)],
 } satisfies Meta<typeof CardSocialComment>;

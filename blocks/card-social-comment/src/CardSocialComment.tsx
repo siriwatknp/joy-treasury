@@ -1,5 +1,4 @@
 import React from "react";
-import { ArrowForward, TurnRight, StarBorder, MoreHoriz } from "@mui/icons-material"
 import {
   Card,
   CardContent,
@@ -9,9 +8,9 @@ import {
   ListItem,
   Link,
   ButtonGroup,
+  SvgIcon,
   IconButton,
   Typography,
-  ColorPaletteProp
 } from "@mui/joy";
 
 export default function CardSocialComment() {
@@ -33,7 +32,7 @@ export default function CardSocialComment() {
       ],
       color: 'warning',
     }
-  ]
+  ] as const
 
   const convertNameToAvatarText = (name: string) => name.split(" ").reduce((acc, word) => `${acc}${word[0] || ''}`, '')
 
@@ -45,9 +44,9 @@ export default function CardSocialComment() {
             comments.map(({ commentor, commentAt, comments, color }) => (
               <ListItem>
                 <Box display="flex" width="100%">
-                  <Avatar color={color as ColorPaletteProp}>{convertNameToAvatarText(commentor)}</Avatar>
+                  <Avatar color={color}>{convertNameToAvatarText(commentor)}</Avatar>
                   <Box width="100%" marginLeft="8px" marginBottom="8px">
-                    <Box display="flex" justifyContent="space-between" alignItems="flex-end" marginBottom="4px">
+                    <Box display="flex" justifyContent="space-between" alignItems="center" marginBottom="4px">
                       <Typography fontWeight="lg">{commentor}</Typography>
                       <Typography fontSize="xs">{commentAt}</Typography>
                     </Box>
@@ -81,16 +80,76 @@ export default function CardSocialComment() {
                         }}
                       >
                         <IconButton>
-                          <TurnRight />
+                          <SvgIcon>
+                            <svg
+                              width="24"
+                              height="24"
+                              viewBox="0 0 24 24"
+                              fill="none"
+                              stroke="currentColor"
+                              strokeWidth="2"
+                              strokeLinecap="round"
+                              strokeLinejoin="round"
+                              className="lucide lucide-corner-up-right"
+                            >
+                              <polyline points="15 14 20 9 15 4" />
+                              <path d="M4 20v-7a4 4 0 0 1 4-4h12" />
+                            </svg>
+                          </SvgIcon>
                         </IconButton>
                         <IconButton>
-                          <ArrowForward />
+                          <SvgIcon>
+                            <svg
+                              width="24"
+                              height="24"
+                              viewBox="0 0 24 24"
+                              fill="none"
+                              stroke="currentColor"
+                              strokeWidth="2"
+                              strokeLinecap="round"
+                              strokeLinejoin="round"
+                              className="lucide lucide-arrow-right"
+                            >
+                              <path d="M5 12h14" />
+                              <path d="m12 5 7 7-7 7" />
+                            </svg>
+                          </SvgIcon>
                         </IconButton>
                         <IconButton>
-                          <StarBorder />
+                          <SvgIcon>
+                            <svg
+                              width="24"
+                              height="24"
+                              viewBox="0 0 24 24"
+                              fill="none"
+                              stroke="currentColor"
+                              strokeWidth="2"
+                              strokeLinecap="round"
+                              strokeLinejoin="round"
+                              className="lucide lucide-star"
+                            >
+                              <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" />
+                            </svg>
+                          </SvgIcon>
                         </IconButton>
                         <IconButton>
-                          <MoreHoriz />
+                          <SvgIcon>
+                            <svg
+                              width="24"
+                              height="24"
+                              viewBox="0 0 24 24"
+                              fill="none"
+                              stroke="currentColor"
+                              strokeWidth="2"
+                              strokeLinecap="round"
+                              strokeLinejoin="round"
+                              className="lucide lucide-more-horizontal"
+                            >
+                              <circle cx="12" cy="12" r="1" />
+                              <circle cx="19" cy="12" r="1" />
+                              <circle cx="5" cy="12" r="1" />
+                            </svg>
+                          </SvgIcon>
                         </IconButton>
                       </ButtonGroup>
                     </Box>
