@@ -33,7 +33,7 @@ const CardGridCourse: FC<CardGridCourseProps> = ({
         transition: TRANSITION_ALL,
         bgcolor: COLORS.white,
         "&:focus-within": {
-          transform: "scale(1.01)",
+          transform: "scale(1.05)",
         },
         ":hover": {
           bgcolor: COLORS.iris,

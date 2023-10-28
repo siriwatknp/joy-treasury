@@ -12,7 +12,7 @@ const meta: Meta<typeof CardGridCourse> = {
   component: CardGridCourse,
   parameters: {
     layout: "centered",
-    githubUsername: "", // (optional) Your github username. If provided, your avatar will be displayed in the story toolbar
+    githubUsername: "fResult", // (optional) Your github username. If provided, your avatar will be displayed in the story toolbar
   },
   decorators: [storyDialog(Usage)],
 };
