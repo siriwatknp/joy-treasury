@@ -78,6 +78,15 @@
       "contributions": [
         "code"
       ]
+    },
+    {
+      "login": "fResult",
+      "name": "Sila Setthakan-anan",
+      "avatar_url": "https://avatars.githubusercontent.com/u/19329932?v=4",
+      "profile": "https://gitlab.com/fResult",
+      "contributions": [
+        "code"
+      ]
     }
   ],
   "contributorsPerLine": 7,
