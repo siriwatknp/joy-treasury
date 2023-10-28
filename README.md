@@ -1,6 +1,6 @@
 # 👋 Welcome! to Joy Treasury
 <!-- ALL-CONTRIBUTORS-BADGE:START - Do not remove or modify this section -->
-[![All Contributors](https://img.shields.io/badge/all_contributors-7-orange.svg?style=flat-square)](#contributors-)
+[![All Contributors](https://img.shields.io/badge/all_contributors-8-orange.svg?style=flat-square)](#contributors-)
 <!-- ALL-CONTRIBUTORS-BADGE:END -->
 
 Joy Treasury is a collection of blocks that are ready-to-use for [Joy UI](https://mui.com/joy-ui/getting-started/) projects.
@@ -84,6 +84,9 @@ Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/d
       <td align="center" valign="top" width="14.28%"><a href="http://annerez.github.io"><img src="https://avatars.githubusercontent.com/u/98201562?v=4?s=100" width="100px;" alt="Anner"/><br /><sub><b>Anner</b></sub></a><br /><a href="https://github.com/siriwatknp/joy-treasury/commits?author=Annerez" title="Code">💻</a></td>
       <td align="center" valign="top" width="14.28%"><a href="https://github.com/Tlezip"><img src="https://avatars.githubusercontent.com/u/23031414?v=4?s=100" width="100px;" alt="Tlezip"/><br /><sub><b>Tlezip</b></sub></a><br /><a href="https://github.com/siriwatknp/joy-treasury/commits?author=Tlezip" title="Code">💻</a></td>
       <td align="center" valign="top" width="14.28%"><a href="https://github.com/wwasuu"><img src="https://avatars.githubusercontent.com/u/15046290?v=4?s=100" width="100px;" alt="Wasu Winitmontri"/><br /><sub><b>Wasu Winitmontri</b></sub></a><br /><a href="https://github.com/siriwatknp/joy-treasury/commits?author=wwasuu" title="Code">💻</a></td>
+    </tr>
+    <tr>
+      <td align="center" valign="top" width="14.28%"><a href="https://patorseing.github.io"><img src="https://avatars.githubusercontent.com/u/29453220?v=4?s=100" width="100px;" alt="Napatchol Thaipanich"/><br /><sub><b>Napatchol Thaipanich</b></sub></a><br /><a href="https://github.com/siriwatknp/joy-treasury/commits?author=patorseing" title="Code">💻</a></td>
     </tr>
   </tbody>
 </table>
