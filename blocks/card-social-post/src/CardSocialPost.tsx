@@ -24,7 +24,7 @@ export default function CardSocialPost() {
       sx={(theme) => ({
         boxShadow: theme.shadow.md,
         borderRadius: "1.5rem",
-        background: "white"
+        background: "background.body"
       })}
     >
       <Stack
