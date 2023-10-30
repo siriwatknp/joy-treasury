@@ -9,7 +9,7 @@ const meta = {
   component: CardUploadDocument,
   parameters: {
     layout: "centered",
-    githubUsername: "", // (optional) Your github username. If provided, your avatar will be displayed in the story toolbar
+    githubUsername: "bazsup", // (optional) Your github username. If provided, your avatar will be displayed in the story toolbar
   },
   decorators: [storyDialog(Usage)],
 } satisfies Meta<typeof CardUploadDocument>;
