@@ -36,12 +36,13 @@ export default function CardBlogTechnology() {
           size="sm"
           sx={{
             "--Chip-paddingInline": "10px",
-            "--joy-fontSize-xs": "10px",
             "--Chip-minHeight": "0px",
-            color: "#a0d7e5",
+            color: "#fff",
             bgcolor: "#4cb1ce",
             alignItems: "center",
             paddingY: "1px",
+            fontSize: "10px",
+            fontWeight: "lg",
           }}
         >
           TECHNOLOGY
