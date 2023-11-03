@@ -9,7 +9,7 @@ export default function CardPeopleMentor() {
   return (
     <Card
       variant="outlined"
-      sx={{ borderRadius: "xl", overflow: "hidden", boxShadow: "xs", backgroundColor: "background.body" }}
+      sx={{ borderRadius: "xl", boxShadow: "xs", backgroundColor: "background.body" }}
     >
       <CardContent orientation="horizontal" sx={{ alignItems: "center" }}>
         <Avatar
